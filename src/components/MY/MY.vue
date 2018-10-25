@@ -4,10 +4,12 @@
       <i class="el-icon-arrow-left"></i>
       <span class="span">我的</span>
       <div class="login">
+        <router-link to="/my/profile">
         <img class="qq" src="../../images/qq.png" alt="">
         <span class="login2">登录/注册</span>
         <p class="login3"> <i class="el-icon-mobile-phone"></i>暂无绑定手机号</p>
         <i class="el-icon-arrow-right el"></i>
+        </router-link>
       </div>
   </div>
   <div class="center">
@@ -116,8 +118,7 @@ a {
   border-bottom: 1px solid gray;
   margin-bottom: 0.1rem;
 }
-.er div img,
-.san div img {
+.er div img,.san div img {
   position: relative;
   left: 5px;
   top: 5px;
@@ -192,17 +193,21 @@ div {
 }
 .login {
   width: 100%;
-  height: 117px;
+  height: 110px;
+  border: 1px solid black;  
   position: absolute;
+  top: 0.4rem;
 }
 .login2 {
   position: relative;
   left: -75px;
   top: -80px;
+  color: white;
 }
 .login3 {
   position: relative;
   left: 20px;
+  color: white;
   top: -70px;
 }
 .span {
