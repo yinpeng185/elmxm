@@ -62,15 +62,19 @@
     </div>
   </router-link>
 </div>
-
+<foot></foot>
 </div>
 </template>
 
 <script>
+import foot from '../one/foot'
 export default {
   name: "my",
   data() {
     return {};
+  },
+  components:{
+    foot
   }
 };
 </script>
@@ -110,7 +114,7 @@ a {
   height: 30px;
   line-height: 30px;
   border-bottom: 1px solid gray;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.1rem;
 }
 .er div img,
 .san div img {
@@ -125,16 +129,16 @@ div {
   color: white;
 }
 .yuan {
-  font-size: 2rem;
+  font-size: 0.5rem;
   color: orange;
 }
 .ge {
-  font-size: 2rem;
+  font-size: 0.5rem;
   color: red;
 }
 .fen {
   color: green;
-  font-size: 2rem;
+  font-size: 0.5rem;
 }
 .hello {
   background: blue;
@@ -203,13 +207,13 @@ div {
 }
 .span {
   color: white;
-  font-size: 1.2rem;
+  font-size: 0.2rem;
   font-weight: bold;
   /* border: 1px solid black; */
   margin-right: 30px;
 }
 .el-icon-arrow-left {
-  font-size: 1.2rem;
+  font-size: 0.2rem;
   float: left;
 }
 .el {

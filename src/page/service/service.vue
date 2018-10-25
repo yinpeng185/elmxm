@@ -113,20 +113,20 @@ export default {
 }
 .el-icon-arrow-left {
   color: white;
-  font-size: 1.5rem;
+  font-size: 0.3rem;
   float: left;
-  margin-top: 0.3rem;
+  margin-top: 0.01rem;
 }
 span {
   color: white;
-  font-size: 1.5rem;
+  font-size: 0.3rem;
   z-index: 5;
 }
 .center {
   /* border: 1px solid red; */
   position: fixed;
   width: 100%;
-  height: 13%;
+  height: 15%;
   top: 4.5%;
   display: flex;
   justify-content: space-around;
@@ -135,8 +135,8 @@ span {
   background: white;
 }
 img {
-  width: 5rem;
-  padding-bottom: 0.3rem;
+  width: 1rem;
+  padding-bottom: 0.1rem;
 }
 .two {
   border-left: 1px solid gray;
@@ -147,7 +147,7 @@ img {
 }
 .list {
   position: relative;
-  top: 9rem;
+  top: 1.5rem;
   z-index: 0;
 }
 .list ul {

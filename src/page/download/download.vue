@@ -42,30 +42,32 @@
 }
 .el-icon-arrow-left{
     color: white; 
-    font-size: 1.5rem;
+    font-size: 0.3rem;
     float: left;
-    margin-top: 0.3rem;
+    margin-top: 0.01rem;
+
 }
 span {
     color: white;
-    font-size: 1.5rem;
+    font-size: 0.3rem;
+
 } 
 p{
-    font-size: 1.5rem;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    font-size: 0.3rem;
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
 }
 .center{
     text-align: center;
-    padding-top: 3rem;
+    padding-top: 1rem;
 }
 button{
     color: white;
     background: springgreen;
     border:none;
-    width: 15rem;
-    height: 3rem;
-    font-size: 2rem;
+    width: 3rem;
+    height: 1rem;
+    font-size: 0.5rem;
 }
 
 </style>

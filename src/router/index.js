@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 import Vuex from 'vuex'
+
 import Foot from '../components/one/foot'
 import First from '../components/one/first'
 //@:直接找到src根目录
@@ -45,9 +46,6 @@ export default new Router({
       path: '/third',
       component: Third,
     },{
-      path: '/forth',
-      component: Forth,
-    } ,{
       path: '/find1',
       component: Find1,
     },{
