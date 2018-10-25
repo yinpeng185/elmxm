@@ -28,7 +28,7 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name:"first",
+      // name:"first",
       component: First,
     },
     {
@@ -75,10 +75,10 @@ export default new Router({
       path: '/service',
       name:'service',
       component: Service,
-      children: [{
-        path: 'questionDetail', //订单详情页
-        component: QuestionDetail,
-    }, ]
-    }
+    },{
+    path: '/service/questionDetail', //订单详情页
+    component: QuestionDetail,
+    } 
   ]
+  
 })

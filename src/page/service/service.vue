@@ -17,10 +17,13 @@
     <div class="list">
         <span>热门问题</span>
         <ul class="ul" v-for="(item,index) in datas" :key="index">
-            <router-link to="">
-                <li v-for="(item,index) in item" :key="index">{{item}}<i class="el-icon-arrow-right el"></i>
+            
+                <li v-for="(item,index) in item" :key="index">
+                  <router-link to="/service/questionDetail">{{item}}
+                  <i class="el-icon-arrow-right el"></i>
+                   </router-link>
                 </li>
-            </router-link>
+           
             
         </ul>
     </div>
