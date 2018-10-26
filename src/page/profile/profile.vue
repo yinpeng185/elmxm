@@ -24,7 +24,7 @@
         </div>
     </div>
     <p class="bd">账号绑定</p>
-    <div class="two">
+    <div class="two" @click="open">
         <div class="two1">
             <img src="../../images/bindphone.png" alt="">
             <span>手机</span>
@@ -45,8 +45,20 @@
 </template>
 
 <script>
-export default {
-
+export default  {
+    methods: {
+      open() {
+        this.$alert('这是一段内容', '标题名称', {
+          confirmButtonText: '确定',
+          callback: action => {
+            this.$message({
+              type: 'info',
+              message: `action: ${ action }`
+            });
+          }
+        });
+      }
+      }
 }
 </script>
 
