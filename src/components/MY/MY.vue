@@ -1,7 +1,9 @@
  <template>
  <div>
   <div class="hello">
-      <i class="el-icon-arrow-left"></i>
+      <router-link to="/first">
+          <i class="el-icon-arrow-left"></i>
+      </router-link>
       <span class="span">我的</span>
       <div class="login">
         <router-link to="/my/profile">
@@ -227,6 +229,7 @@ div {
 .el-icon-arrow-left {
   font-size: 0.2rem;
   float: left;
+  color: white;
 }
 .el {
   color: white;

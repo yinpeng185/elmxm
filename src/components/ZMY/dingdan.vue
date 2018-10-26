@@ -5,12 +5,19 @@
            <span>订单列表</span>
        </header>
        <router-view></router-view>
+       <foot></foot>
     </div>
 </template>
 
 <script>
+
+import foot from '../one/foot'
+
 export default {
-    name: "dingdan"
+    name: "dingdan",
+    components:{
+        foot
+    }
 }
 </script>
 

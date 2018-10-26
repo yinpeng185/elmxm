@@ -74,7 +74,7 @@ export default {
           if(res.data.status == null){
         alert("登陆成功");
         //给vuex保存用户信息
-        this.$router.push({name:"HelloWorld",query:res.data});
+        this.$router.push({path:"/first/",query:{username:res.data.username}});
         } else{
         alert(res.data.message);
         }

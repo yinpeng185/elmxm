@@ -8,12 +8,19 @@
            <input type="text" placeholder="请输入商家或美食名称">
            <button type="submit">提交</button>
        </div>
+       <foot></foot>
     </div>
 </template>
 
 <script>
+
+import foot from '../one/foot'
+
 export default {
-  name: "sousuo"
+  name: "sousuo",
+  components:{
+      foot
+  }
 }
 </script>
 
