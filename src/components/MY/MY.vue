@@ -14,19 +14,25 @@
   </div>
   <div class="center">
      <div class="one">
+     <router-link to="/my/balance">      
        <span class="yuan">0.00</span>
        <span>元</span>
        <p>我的余额</p>
+       </router-link>
        </div>
      <div class="two">
+     <router-link to="/my/points">        
        <span  class="ge">0</span>
        <span>个</span>
        <p>我的优惠</p>
+       </router-link>
        </div>
      <div class="thr">
+     <router-link to="/my/benefit">      
        <span  class="fen">0</span>
        <span>分</span>       
        <p>我的积分</p>
+       </router-link>
        </div>
   </div>
 <div class="er">
@@ -69,13 +75,13 @@
 </template>
 
 <script>
-import foot from '../one/foot'
+import foot from "../one/foot";
 export default {
   name: "my",
   data() {
     return {};
   },
-  components:{
+  components: {
     foot
   }
 };
@@ -118,7 +124,8 @@ a {
   border-bottom: 1px solid gray;
   margin-bottom: 0.1rem;
 }
-.er div img,.san div img {
+.er div img,
+.san div img {
   position: relative;
   left: 5px;
   top: 5px;

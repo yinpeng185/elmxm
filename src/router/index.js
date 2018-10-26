@@ -22,9 +22,9 @@ import Service from '../page/service/service'
 import QuestionDetail from '../page/service/children/questionDetail'
 import Profile from '../page/profile/profile'
 import Setusername from '../page/profile/children/setusername'
-
-
-
+import Balance from '../page/balance/balance'
+import Benefit from '../page/benefit/benefit'
+import Points from '../page/points/points'
 
 
 
@@ -100,26 +100,28 @@ export default new Router({
       name:'download',
       component: Download
     },{
-      path: '/service',
+      path: '/service',//服务中心问题页
       name:'service',
       component: Service,
     },{
-      path: '/service/questionDetail', //订单详情页
+      path: '/service/questionDetail', //服务中心答案页
       component: QuestionDetail,
     },{
-      path: '/my/profile', //订单详情页
+      path: '/my/profile', //个人详情页
       component: Profile,
     }, {
-      path: '/my/profile/setusername', //订单详情页
+      path: '/my/profile/setusername', //修改用户名页
       component: Setusername,
+    },{
+      path: '/my/balance', //余额页
+      component: Balance,
+    },{
+      path: '/my/points', //积分页
+      component: Points,
+    },{
+      path: '/my/benefit', //红包页
+      component: Benefit,
     },
-    
-    
-
-
-
-
-
 
 
 
