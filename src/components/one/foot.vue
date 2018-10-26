@@ -8,14 +8,14 @@
           <p><a href="##">外卖</a></p>
           </div>
           </router-link>
-          <router-link to="/second">
+          <router-link to="/sousuo">
           <div class="s1" @click="change2">
            <img src="../img/02.png" v-if="down2">
            <img src="../img/21.png" v-else>
           <p><a href="##">搜索</a></p>
           </div>
           </router-link>
-          <router-link to="/third">
+          <router-link to="/dingdan">
           <div class="s1" @click="change3">
            <img src="../img/03.png" v-if="down3">
            <img src="../img/22.png" v-else>

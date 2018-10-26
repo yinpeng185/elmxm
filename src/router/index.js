@@ -6,15 +6,9 @@ import Vuex from 'vuex'
 import Foot from '../components/one/foot'
 import First from '../components/one/first'
 //@:直接找到src根目录
-import Second from '@/components/one/second'
-import Third from '../components/one/third'
 //@:直接找到src根目录
-import Forth from '@/components/one/forth'
-import Find1 from '@/components/one/find1'
-import Find2 from '@/components/one/find2'
 import Sweet from '@/components/one/sweet'
 import Eat from '@/components/one/eat'
-import HelloWorld from '@/components/HelloWorld'
 import MY from '../components/MY/MY'
 import Msite from '../page/msite/msite'
 import Download from '../page/download/download'
@@ -25,7 +19,12 @@ import Setusername from '../page/profile/children/setusername'
 import Balance from '../page/balance/balance'
 import Benefit from '../page/benefit/benefit'
 import Points from '../page/points/points'
-
+import SouSuo from '@/components/ZMY/sousuo'
+import Dingwei from '@/components/ZMY/dingwei'
+import DengLu from '@/components/ZMY/denglu'
+import Dingdan from '@/components/ZMY/dingdan'
+import Change from '@/components/ZMY/change'
+import Dingwei2 from '@/components/ZMY/dingwei2'
 
 
 
@@ -56,7 +55,7 @@ export default new Router({
   routes: [
     {
       path: '/',
-      // name:"first",
+      name:"first",
       component: First,
     },
     {
@@ -67,18 +66,6 @@ export default new Router({
       path: '/first',
       name:'first',
       component: First,
-    },{
-      path: '/second',
-      component: Second,
-    },{
-      path: '/third',
-      component: Third,
-    },{
-      path: '/find1',
-      component: Find1,
-    },{
-      path: '/find2',
-      component: Find2,
     },{
       path: '/sweet',
       name:"sweet",
@@ -121,7 +108,31 @@ export default new Router({
     },{
       path: '/my/benefit', //红包页
       component: Benefit,
-    },
+    },{
+      path: '/sousuo',
+      name: 'SouSuo',
+      component: SouSuo
+    },{
+      path: '/dingwei',
+      name: 'dingwei',
+      component: Dingwei
+    },{
+      path: '/denglu',
+      name: 'denglu',
+      component: DengLu
+    },{
+      path: '/dingdan',
+      name: 'dingdan',
+      component: Dingdan
+    },{
+      path: '/change',
+      name: 'change',
+      component: Change
+    },{
+      path: '/dingwei2/:id',
+      name: 'dingwei2',
+      component: Dingwei2
+    }
 
 
 

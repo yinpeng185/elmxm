@@ -2,17 +2,17 @@
 <div>
   <div id="hao3">
   <div id="hao">
-         <router-link to="/find1"> 
+         <router-link to="/sousuo"> 
           <img src="../img/02.png" alt="">
           </router-link>        
  </div>
  <div id="hao2">
-     <router-link to="/find2"> 
+     <router-link to="/dingwei"> 
               <span>请选择地址...</span>
           </router-link>
  </div>
  <div id="hao1">
-     <router-link to="/find2"> 
+     <router-link to="/denglu"> 
               <span>登录|注册</span>
           </router-link>
  </div>
