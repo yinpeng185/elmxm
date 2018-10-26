@@ -23,6 +23,32 @@ import QuestionDetail from '../page/service/children/questionDetail'
 import Profile from '../page/profile/profile'
 import Setusername from '../page/profile/children/setusername'
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Vue.use(Router)
 Vue.use(Vuex)
 
@@ -86,7 +112,72 @@ export default new Router({
     }, {
       path: '/my/profile/setusername', //订单详情页
       component: Setusername,
-    },  
+    },
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
   ]
   
 })

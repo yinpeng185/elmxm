@@ -13,7 +13,15 @@ import axios from 'axios'
 import VueAxios from 'vue-axios'
 import store from '././store'
 
+
+
+
+
+
 Vue.use(VueAxios, axios)
+
+
+
 
 Vue.use(VueAwesomeSwiper)
 Vue.use(ElementUI);
@@ -24,6 +32,10 @@ new Vue({
   el: '#app',
   router,
   store,
+
+
+
+
   components: { App },
   template: '<App/>'
 })
