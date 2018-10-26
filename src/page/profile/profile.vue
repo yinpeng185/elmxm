@@ -45,21 +45,18 @@
 </template>
 
 <script>
-export default  {
+export default {
     methods: {
       open() {
-        this.$alert('这是一段内容', '标题名称', {
+        this.$confirm('请在手机APP中设置', '提示', {
           confirmButtonText: '确定',
-          callback: action => {
-            this.$message({
-              type: 'info',
-              message: `action: ${ action }`
-            });
-          }
-        });
+          cancelButtonText: '好的',
+          type: 'warning',
+          center: true
+        })
       }
-      }
-}
+    }
+  }
 </script>
 
 <style scoped>
