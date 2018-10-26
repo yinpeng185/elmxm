@@ -200,5 +200,6 @@ button{
     height: 0.5rem;
     font-size: 0.2rem;
     margin: 0.5rem 0 1rem 1rem ;
+    border-radius: 10%
 }
 </style>
