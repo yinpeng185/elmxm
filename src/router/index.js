@@ -26,28 +26,6 @@ import Dingdan from '@/components/ZMY/dingdan'
 import Change from '@/components/ZMY/change'
 import Dingwei2 from '@/components/ZMY/dingwei2'
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 Vue.use(Router)
 Vue.use(Vuex)
 
@@ -64,7 +42,7 @@ export default new Router({
     },
     {
       path: '/first',
-      name:'first',
+      // name:'first',
       component: First,
     },{
       path: '/sweet',
@@ -132,65 +110,17 @@ export default new Router({
       path: '/dingwei2/:id',
       name: 'dingwei2',
       component: Dingwei2
+    }   
+  ]  
+})
+
+const store = new Vuex.Store({
+  state: {
+    count: 0
+  },
+  mutations: {
+    increment (state) {
+      state.count++
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-  ]
-  
+  }
 })

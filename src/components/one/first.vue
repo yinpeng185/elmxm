@@ -70,7 +70,7 @@
             <p>
                 <span class="sp7">￥{{k.float_minimum_order_amount}}起送/</span>
                 <span class="sp7">{{k.piecewise_agent_fee.tips}}</span>
-                <span class="sp7">{{k.distance}}/{{k.order_lead_time}}</span>
+                <span class="sp7">10公里<span style="color:blue">/40分钟</span></span>
             </p>
         </div>
     </router-link>

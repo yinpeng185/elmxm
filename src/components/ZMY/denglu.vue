@@ -1,7 +1,7 @@
 <template>
     <div class="all">
         <header>
-           <router-link class="luy" :to="{name:'first'}">V</router-link>
+           <router-link class="luy" :to="{path:'/first'}">V</router-link>
            <span>密码登录</span>
        </header>
        <input class="ip1" v-model="username" type="text" placeholder="账号">
