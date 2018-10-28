@@ -6,9 +6,15 @@
       </router-link>
       <span class="span">我的</span>
       <div class="login">
-        <router-link to="/my/profile">
+        <router-link v-if="value" to="/denglu">
         <img class="qq" src="../../images/qq.png" alt="">
         <span class="login2">登录/注册</span>
+        <p class="login3"> <i class="el-icon-mobile-phone"></i>暂无绑定手机号</p>
+        <i class="el-icon-arrow-right el"></i>
+        </router-link>
+        <router-link v-else to="/my/profile">
+        <img class="qq" src="../../images/qq.png" alt="">
+        <span class="login2">{{username}}</span>
         <p class="login3"> <i class="el-icon-mobile-phone"></i>暂无绑定手机号</p>
         <i class="el-icon-arrow-right el"></i>
         </router-link>
@@ -81,7 +87,18 @@ import foot from "../one/foot";
 export default {
   name: "my",
   data() {
-    return {};
+    return {
+      value: true,
+      username: ""
+    };
+  },
+  created(){
+    if(this.$store.state.username == undefined){
+      this.value = true;
+    }else{
+      this.value = this.$store.state.value;
+      this.username = this.$store.state.username;
+    }    
   },
   components: {
     foot

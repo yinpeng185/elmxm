@@ -7,13 +7,19 @@
           </router-link>        
  </div>
  <div id="hao2">
-     <router-link to="/dingwei"> 
+     <router-link v-if="value1" to="/dingwei"> 
               <span>请选择地址...</span>
+          </router-link>
+      <router-link v-else to=""> 
+              <span>{{csxx}}</span>
           </router-link>
  </div>
  <div id="hao1">
-     <router-link to="/denglu"> 
+     <router-link v-if="value" to="/denglu"> 
               <span>登录|注册</span>
+          </router-link>
+      <router-link v-else to="/my"> 
+              <span>我的</span>
           </router-link>
  </div>
  </div>
@@ -85,7 +91,7 @@
 
 //引入loading样式
 import { Loading } from "element-ui";
-
+import { mapState, mapMutations } from "vuex";
 import { swiper, swiperSlide } from "vue-awesome-swiper";
 
 import foot from "../one/foot";
@@ -112,6 +118,7 @@ let First = {
   name: "first"
 };
 
+
 //导出模块:组件必须是default
 export default {
   First,
@@ -120,9 +127,14 @@ export default {
     swiperSlide,
     foot,
   },
+ 
 
   data: () => ({
     data: [],
+    name: "",
+    value: true,
+    value1: true,
+    csxx: "",
      imgs1: [
       { title: "甜品饮品", src: img1 },
       { title: "商超便利", src: img2 },
@@ -172,7 +184,22 @@ export default {
     console.log(index);
 },
   created() {
-       let loadingInstance = Loading.service({
+    if(this.$store.state.username == undefined){
+      this.value = true;
+    }else{
+      this.value = this.$store.state.value;
+    }
+    if(this.$store.state.dz == undefined){
+      this.value1 = true;
+    }else{
+      this.value1 = this.$store.state.value;
+      this.csxx = this.$store.state.dz;
+    }
+    // this.csxx1 = this.$route.query.name;
+    // this.$store.commit("dizhicz", this.csxx1);
+    // this.value1 = this.$store.state.value;
+    // this.csxx2 = this.$store.state.dz;
+      let loadingInstance = Loading.service({
         fullscreen:true
       });
    

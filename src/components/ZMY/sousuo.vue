@@ -112,11 +112,12 @@ export default {
     }
     .d1{
         background: white;
-
+        overflow: hidden;
     }
     .d1 p{
         font-size: 0.24px;
         margin: 0.1rem 0;
+        font-weight: bold;
     }
     .d1 li{
         font-size: 0.2px;

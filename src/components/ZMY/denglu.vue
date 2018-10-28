@@ -38,6 +38,7 @@ export default {
     return {
       value: false,
       data: "",
+      lujing: "/denglu",
       username: "",
       password: "",
       codeNumer: ""
@@ -58,7 +59,7 @@ export default {
       this.data = data.data;
     })
     },
-    login() {
+    login(username) {
         const api = "https://elm.cangdu.org/v2/login";
         this.$http({
           method: 'post',
@@ -74,13 +75,22 @@ export default {
           if(res.data.status == null){
         alert("登陆成功");
         //给vuex保存用户信息
-        this.$router.push({path:"/first/",query:{username:res.data.username}});
+        this.$router.push({path:"/first/"});
+        this.$store.commit("saveuser", this.username);
+        // this.$store.commit("saveuser", this.value);
+        // this.$store.commit("saveuser", this.lujing);
+        // 使用localStorage本地存储数据
+        // localStorage.setItem("username",res.data.username);
+        //             .setItem(参数名,保存在该参数中的数据);
+        //             .getItem(参数名)获取数据
+        //             .removeItem(参数名)删除数据
         } else{
         alert(res.data.message);
         }
-        console.log('---', res)
+        console.log('---', res);
+        // console.log(localStorage);
+        console.log(this.$store.state);
         });
-
       }
   }
 };

@@ -13,11 +13,9 @@
        </div>
        <div v-if="value" class="ctss">
            <ul v-for="(xx, index) in xinxi" :key="index">
-                <li @click="dizhi()">
-                    <router-link to="/">
-                        <p>{{xx.name}}</p>
-                        <p>{{xx.address}}</p>
-                    </router-link>
+                <li @click="dizhi(index)">
+                    <p>{{xx.name}}</p>
+                    <p>{{xx.address}}</p>
                 </li>
            </ul>
        </div>
@@ -39,7 +37,8 @@ export default {
             xinxi: "",
             city: "",
             keyword: "",
-            lishi: []
+            lishi: [],
+            csxx: ""
         }
     },
     created() {
@@ -61,16 +60,18 @@ export default {
             if(this.keyword == ""){
                 alert("请输入内容!");
             }else{
-                this.xinxi = data.data;        
+                this.xinxi = data.data;
+                console.log(data.data); 
             }
-           
+          
         });
         },
-        dizhi(){
-            
-            localStorage.data = this.lishi.unshift(this.keyword);
-            console.log(localStorage.data);
+        dizhi(index){
+             this.csxx = this.xinxi[index].name;
+             this.$store.commit("dizhicz", this.csxx);
+             this.$router.push({path:"/first"});
         }
+        
     }
 }
 </script>
