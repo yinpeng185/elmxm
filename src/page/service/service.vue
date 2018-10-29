@@ -15,11 +15,13 @@
         </div>
     </div>
     <div class="list">
-        <span>热门问题</span>
+      <div class="phot">
+        <span >热门问题</span>
+        </div>
         <ul class="ul" v-for="(item,index) in datas" :key="index">
             
-                <li v-for="(item,index) in item" :key="index">
-                  <router-link to="/service/questionDetail">{{item}}
+                <li class="li" v-for="(item,index) in item" :key="index">
+                  <router-link class="lia" to="/service/questionDetail">{{item}}
                   <i class="el-icon-arrow-right el"></i>
                    </router-link>
                 </li>
@@ -154,6 +156,23 @@ img {
   z-index: 0;
 }
 .list ul {
+  margin-top: 5%;
+}
+.phot{
+}
+.li{
+  color: gray;
+  height: 0.5rem;
+  line-height: .5rem;
+  padding: 10px;
+  border-top: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
+}
+.lia{
+  color: gray;
+}
+.el{
+  float: right;
   margin-top: 5%;
 }
 </style>
