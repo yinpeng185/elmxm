@@ -29,14 +29,14 @@
        </router-link>
        </div>
      <div class="two">
-     <router-link to="/my/points">        
+     <router-link to="/my/benefit">        
        <span  class="ge">0</span>
        <span>个</span>
        <p>我的优惠</p>
        </router-link>
        </div>
      <div class="thr">
-     <router-link to="/my/benefit">      
+     <router-link to="/my/points">      
        <span  class="fen">0</span>
        <span>分</span>       
        <p>我的积分</p>

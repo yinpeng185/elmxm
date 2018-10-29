@@ -26,6 +26,7 @@ import Dingdan from '@/components/ZMY/dingdan'
 import Change from '@/components/ZMY/change'
 import Dingwei2 from '@/components/ZMY/dingwei2'
 import Vipcard from '../page/vipcard/vip'
+import Detail from '../page/points/children/detail'
 
 Vue.use(Router)
 Vue.use(Vuex)
@@ -84,6 +85,9 @@ export default new Router({
     },{
       path: '/my/points', //积分页
       component: Points,
+    },{
+      path: '/my/points/detail', //积分页
+      component: Detail,
     },{
       path: '/my/benefit', //红包页
       component: Benefit,
