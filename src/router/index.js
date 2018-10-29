@@ -27,6 +27,7 @@ import Change from '@/components/ZMY/change'
 import Dingwei2 from '@/components/ZMY/dingwei2'
 import Vipcard from '../page/vipcard/vip'
 import Detail from '../page/points/children/detail'
+import balDetail from '../page/balance/children/detail'
 
 Vue.use(Router)
 Vue.use(Vuex)
@@ -82,6 +83,9 @@ export default new Router({
     },{
       path: '/my/balance', //余额页
       component: Balance,
+    },{
+      path: '/my/balance/detail', //余额说明页
+      component: balDetail,
     },{
       path: '/my/points', //积分页
       component: Points,
