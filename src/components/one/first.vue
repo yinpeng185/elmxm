@@ -10,7 +10,7 @@
      <router-link v-if="value1" to="/dingwei"> 
               <span>请选择地址...</span>
           </router-link>
-      <router-link v-else to=""> 
+      <router-link v-else to="/dingwei"> 
               <span>{{csxx}}</span>
           </router-link>
  </div>

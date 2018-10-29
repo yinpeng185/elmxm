@@ -9,7 +9,6 @@
            <button @click="SS()" type="submit">提交</button>
        </div>
        <div class="d1" v-if="value1">
-          <p>历史记录</p>
           <ul>
                <li v-for="(jl, index) in arr" :key="index">{{jl}}</li>
           </ul>
@@ -35,22 +34,36 @@ export default {
           txt: ""
       }
   },
+  created(){
+      if(this.$store.state.ssls == undefined){
+          this.arr = ["历史记录"];
+      }else{
+          this.arr = this.$store.state.ssls;
+      }      
+      if(this.arr.length >= 2){
+          this.value2 = false;
+          this.value1 = true;
+      }
+  },
   components:{
       foot
   },
   methods:{
-      ip(){
-          
-          if(this.txt == "" && this.arr.index !== 0){
-              this.value2 = false;
+      ip(){  
+          if(this.txt == "" && this.arr.length >= 2){
               this.value1 = true;
+              this.value2 = false;
           }
-          console.log(this.txt);
       },
-      SS(){
+      SS(arr){
           this.value1 = false;
           this.value2 = true;
-          this.arr.unshift(this.txt);
+          if(this.txt !== ""){     
+            this.arr.push(this.txt);
+            console.log(this.arr);
+          }
+          this.$store.commit("sousuols", this.arr);
+          console.log(this.$store.state.ssls);
       }
   }
 }
@@ -113,6 +126,7 @@ export default {
     .d1{
         background: white;
         overflow: hidden;
+        padding: 0 5%;
     }
     .d1 p{
         font-size: 0.24px;
@@ -120,7 +134,11 @@ export default {
         font-weight: bold;
     }
     .d1 li{
-        font-size: 0.2px;
-        margin: 0.1rem 0;
+        font-size: 0.2rem;
+        padding: 0.1rem 0;
+        border-bottom: 0.01rem solid gray;
+    }
+    .d1 li:first-child{
+        font-weight: bold;
     }
 </style>

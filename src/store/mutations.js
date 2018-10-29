@@ -6,5 +6,8 @@ export default{
     },
     dizhicz(store, csxx){
       this.state.dz = csxx;
+    },
+    sousuols(store, arr){
+      this.state.ssls=arr;
     }
   }
