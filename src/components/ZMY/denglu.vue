@@ -71,14 +71,11 @@ export default {
             username: this.username
           },
         }).then(res => {
-          // alert("登陆成功");
           if(res.data.status == null){
         alert("登陆成功");
-        //给vuex保存用户信息
         this.$router.push({path:"/first/"});
+        //给vuex保存用户信息
         this.$store.commit("saveuser", this.username);
-        // this.$store.commit("saveuser", this.value);
-        // this.$store.commit("saveuser", this.lujing);
         // 使用localStorage本地存储数据
         // localStorage.setItem("username",res.data.username);
         //             .setItem(参数名,保存在该参数中的数据);
@@ -86,10 +83,14 @@ export default {
         //             .removeItem(参数名)删除数据
         } else{
         alert(res.data.message);
+        if(res.data.message == "密码错误"){
+            this.password = "";
         }
-        console.log('---', res);
-        // console.log(localStorage);
-        console.log(this.$store.state);
+        if(res.data.message == "验证码不正确"){
+            this.codeNumer = "";
+        }
+        this.huanma2();
+        }
         });
       }
   }

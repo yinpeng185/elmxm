@@ -195,10 +195,6 @@ export default {
       this.value1 = this.$store.state.value;
       this.csxx = this.$store.state.dz;
     }
-    // this.csxx1 = this.$route.query.name;
-    // this.$store.commit("dizhicz", this.csxx1);
-    // this.value1 = this.$store.state.value;
-    // this.csxx2 = this.$store.state.dz;
       let loadingInstance = Loading.service({
         fullscreen:true
       });

@@ -14,7 +14,7 @@
         <div class="one2">
             <router-link to="/my/profile/setusername">
             <span class="onep2">用户名</span> 
-            <input type="text" value="123456789" class="name">
+            <input type="text" :value="name" class="name">
             <i class="el-icon-arrow-right"></i> 
             </router-link>          
         </div>
@@ -39,13 +39,21 @@
             <i class="el-icon-arrow-right"></i>                        
         </div>
     </div>
-    <button>退出登录</button>
+    <button @click="tuichu()">退出登录</button>
   </div>  
 </div>
 </template>
 
 <script>
 export default {
+    data(){
+        return{
+            name: ""
+        }
+    },
+    created(){
+        this.name = this.$store.state.username;
+    },
     methods: {
       open() {
         this.$confirm('请在手机APP中设置', '提示', {
@@ -54,6 +62,14 @@ export default {
           type: 'warning',
           center: true
         })
+      },
+      tuichu(name){
+          let api = "https://elm.cangdu.org/v2/signout";
+          this.$http.get(api).then(data => {
+              alert(data.data.message);
+              this.$router.push({path:"/first"})
+              this.$store.commit("saveuser", name=undefined); 
+          })         
       }
     }
   }

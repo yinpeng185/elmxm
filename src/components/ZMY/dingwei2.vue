@@ -62,16 +62,14 @@ export default {
             }else{
                 this.xinxi = data.data;
                 console.log(data.data); 
-            }
-          
+            }    
         });
         },
         dizhi(index){
              this.csxx = this.xinxi[index].name;
              this.$store.commit("dizhicz", this.csxx);
              this.$router.push({path:"/first"});
-        }
-        
+        }     
     }
 }
 </script>

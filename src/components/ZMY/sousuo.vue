@@ -84,7 +84,7 @@ export default {
         background: white;
     }
     input{
-        height: 0.4rem;
+        height: 0.42rem;
         width: 70%;
         border: 1px solid gray;
         margin-top: 3%;

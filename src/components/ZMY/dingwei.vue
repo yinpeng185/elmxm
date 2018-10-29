@@ -56,9 +56,7 @@ export default {
   let api =
       "https://elm.cangdu.org/v1/cities?type=group";
     this.$http.get(api).then(data => {
-      //成功后的回调
       console.log("成功了......");
-      //展示所有商店名
     //   console.log(data);
       this.data = data.data;
     });
@@ -66,7 +64,7 @@ export default {
     let dwc = "https://elm.cangdu.org/v1/cities?type=guess";
     this.$http.get(dwc).then(data => { 
        this.dingwei = data.data;
-    //    console.log(this.dingwei);
+       console.log(data.data);
     })
 
     let htc = "https://elm.cangdu.org/v1/cities?type=hot";

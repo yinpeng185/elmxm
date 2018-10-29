@@ -68,6 +68,7 @@ export default {
           this.data = data.data;
           if(this.data.status == 0){
             alert(this.data.message);
+            this.huanma2();
           }else{
             alert(this.data.success);
           }
@@ -146,7 +147,7 @@ button {
 .yanma div span{
   color: black;
   width: 0.5rem;
-  margin: 0;
+  margin-top: 3%;
 }
 .yanma div .sp{
   color: blue;
