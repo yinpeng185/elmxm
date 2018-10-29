@@ -35,21 +35,21 @@ Vue.use(Vuex)
 export default new Router({
   routes: [
     {
-      path: '/',
+      path: '/',  //默认路径
       name:"first",
       component: First,
     },
     {
-      path: '/foot',
+      path: '/foot',    //底部共用组件
       component: Foot,
     },
     {
-      path: '/first',
+      path: '/first',      //外卖页
       // name:'first',
       component: First,
-    },{
+    },{ 
       path: '/sweet',
-      name:"sweet",
+      name:"sweet", 
       component: Sweet,
     },{
       path: '/eat',
@@ -90,7 +90,7 @@ export default new Router({
       path: '/my/points', //积分页
       component: Points,
     },{
-      path: '/my/points/detail', //积分页
+      path: '/my/points/detail', //积分说明页
       component: Detail,
     },{
       path: '/my/benefit', //红包页
