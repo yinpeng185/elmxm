@@ -18,6 +18,6 @@ export default {
   padding: 0;
 }
 body{
-  background: lightgray;
+  /* background: lightgray; */
 }
 </style>
