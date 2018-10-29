@@ -12,7 +12,7 @@
         <div v-if="show4" class="divrr"><span>商家代金券</span></div>
       </div>
       <div  v-if="show2" class="div2">
-        <div>
+        <div class="zydiv">
           <span class="san">有3个红包即将到期</span>
           <span class="red"><img class="img" src="../../images/description.png" alt="">红包说明</span> 
         </div>
@@ -122,7 +122,6 @@ export default {
   height: 0.15rem;
 }
 .red{
-  padding: 0.1rem;
   font-size: 0.2rem;
   float: right;
   color: blue;
@@ -152,5 +151,8 @@ export default {
   width: 2rem;
   border-radius: 10px;
 }
-
+.zydiv{
+  border: 2px solid black;
+  margin-top: .1rem;
+}
 </style>
