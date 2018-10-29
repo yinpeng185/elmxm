@@ -28,6 +28,7 @@ import Dingwei2 from '@/components/ZMY/dingwei2'
 import Vipcard from '../page/vipcard/vip'
 import Detail from '../page/points/children/detail'
 import balDetail from '../page/balance/children/detail'
+import Daijin from '../page/benefit/children/daijin'
 
 Vue.use(Router)
 Vue.use(Vuex)
@@ -95,6 +96,9 @@ export default new Router({
     },{
       path: '/my/benefit', //红包页
       component: Benefit,
+    },{
+      path: '/my/benefit/daijin', //代金券页
+      component: Daijin,
     },{
       path: '/my/vipcard', //会员页
       component: Vipcard,
