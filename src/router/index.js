@@ -25,6 +25,7 @@ import DengLu from '@/components/ZMY/denglu'
 import Dingdan from '@/components/ZMY/dingdan'
 import Change from '@/components/ZMY/change'
 import Dingwei2 from '@/components/ZMY/dingwei2'
+import Vipcard from '../page/vipcard/vip'
 
 Vue.use(Router)
 Vue.use(Vuex)
@@ -86,6 +87,9 @@ export default new Router({
     },{
       path: '/my/benefit', //红包页
       component: Benefit,
+    },{
+      path: '/my/vipcard', //会员页
+      component: Vipcard,
     },{
       path: '/sousuo',
       name: 'SouSuo',

@@ -45,19 +45,23 @@
   </div>
 <div class="er">
   <div>
+   <router-link to="/dingdan">          
     <img src="../../images/bindphone.png" alt="">
-    我的订单
+    <span class="ooooo">我的订单</span>
     <i class="el-icon-arrow-right el-right"></i>
+       </router-link>    
   </div>
-  <div>
+  <div :plain="true" @click="open3">
     <img src="../../images/bindphone.png" alt="">    
-    积分商城
+    <span class="ooooo">积分商城</span>
     <i class="el-icon-arrow-right el-right"></i>
   </div>
   <div>
+     <router-link to="/my/vipcard"> 
     <img src="../../images/bindphone.png" alt="">
-    饿了么会员卡
+    <span class="ooooo">饿了么会员卡</span>
     <i class="el-icon-arrow-right el-ri"></i>
+         </router-link> 
   </div>
 </div>
 
@@ -102,7 +106,15 @@ export default {
   },
   components: {
     foot
-  }
+  },
+  methods: {
+      open3() {
+        this.$message({
+          message: '该功能暂未开放！',
+          type: 'warning'
+        });
+      },
+    }
 };
 </script>
 
@@ -134,6 +146,9 @@ a {
   float: right;
   margin-top: 2%;
   left: 53%;
+}
+.ooooo{
+  color: black;
 }
 .er div,
 .san div {
