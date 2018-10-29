@@ -44,7 +44,7 @@ export default new Router({
       component: Foot,
     },
     {
-      path: '/first',      //外卖页
+      path: '/first',      //外卖界面
       // name:'first',
       component: First,
     },{ 
@@ -56,15 +56,15 @@ export default new Router({
       name:"eat",
       component: Eat,
     }, {
-      path: '/my',
-      name: 'my',
+      path: '/my',      //我的界面
+      name: 'my',     
       component: MY
     }, {
       path: '/msite',
       name: 'msite',
       component: Msite
     },{
-      path: '/download',
+      path: '/download',  //下载饿了么app
       name:'download',
       component: Download
     },{
@@ -99,19 +99,19 @@ export default new Router({
       path: '/my/vipcard', //会员页
       component: Vipcard,
     },{
-      path: '/sousuo',
+      path: '/sousuo',    //搜索页
       name: 'SouSuo',
       component: SouSuo
     },{
-      path: '/dingwei',
+      path: '/dingwei',   //城市
       name: 'dingwei',
       component: Dingwei
     },{
-      path: '/denglu',
+      path: '/denglu',   //登录
       name: 'denglu',
       component: DengLu
     },{
-      path: '/dingdan',
+      path: '/dingdan', //订单页
       name: 'dingdan',
       component: Dingdan
     },{
