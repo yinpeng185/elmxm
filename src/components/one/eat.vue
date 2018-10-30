@@ -81,8 +81,8 @@ export default {
   margin-top: 3%;
 }
 .img2 {
-  width: 75px;
-  padding-top: 20px;
+  width: 0.75rem;
+  padding-top: 0.2rem;
 }
 .content_ul li > div:nth-child(2) {
   width: 80%;
