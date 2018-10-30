@@ -18,6 +18,8 @@
           <span class="red"><img class="img" src="../../images/description.png" alt="">红包说明</span> 
           </router-link>
         </div>
+
+
       </div>
       <div v-else class="div3">
         <div>
@@ -34,9 +36,9 @@
           </div>
         </div>
       </div>
+      
     </div>
-</div>
-    
+</div>  
 </template>
 
 <script>
