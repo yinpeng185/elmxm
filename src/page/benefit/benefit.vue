@@ -53,26 +53,28 @@
           </div>
           <div>
             <div class="zys1">
-            <div class="zys11">
-              <p class="p">￥<span>4</span>.5</p>
-              <p>满30元可</p>
-              <p>用</p>
-            </div>
-            <div class="zys12">
-              <p>分享红包</p>
-              <p>2017-05-23到期</p>
-              <p>限收货手机号为</p>
-              <p>13681711254</p>
-            </div>
-            <div class="zys13">
-              <p>剩3日</p>
+              <div class="zys11">
+                <p class="p">￥<span>4</span>.5</p>
+                <p>满30元可</p>
+                <p>用</p>
               </div>
+              <div class="zys12">
+                <p>分享红包</p>
+                <p>2017-05-23到期</p>
+                <p>限收货手机号为</p>
+                <p>13681711254</p>
+              </div>
+              <div class="zys13">
+                <p>剩3日</p>
+                </div>
             </div>
             <div>限品类：快餐便当、特色菜系、甜品饮品、异国料理</div>
           </div>
+          <div class="history">查看历史记录 <i class="el-icon-arrow-right"></i></div>
         </div>
-
+      
       </div>
+      
       <div v-else class="div3">
         <div>
           <router-link to="/my/benefit/daijin">
@@ -88,7 +90,10 @@
           </div>
         </div>
       </div>
-      
+        <div class="divvvv">
+        <div class="divl">红包</div>
+        <div class="divr">商家代金券</div>
+      </div>
     </div>
 </div>  
 </template>
@@ -176,6 +181,7 @@ export default {
 .red{
   font-size: 0.2rem;
   float: right;
+  padding-right: 0.2rem;
   color: blue;
 }
 .san{
@@ -199,7 +205,7 @@ export default {
   background: springgreen;
   color: white;
   height: 0.5rem;
-  font-size: 0.2rem;
+  font-size: 0.1rem;
   width: 2rem;
   border-radius: 10px;
 }
@@ -209,8 +215,8 @@ export default {
   margin-left: 0.2rem;
 }
 .zysdiv{
-  background: springgreen;
-  width: 100%;
+  /* background: springgreen; */
+  width: 82%;
   margin-right: 1rem;
   padding: 0.3rem;
 }
@@ -219,6 +225,8 @@ export default {
   display: flex;
   width: 90%;
   padding: 0.2rem 0 0.2rem 0;
+  margin-top: 0.2rem;  
+  font-size: 0.1rem;
 }
 .zys11{
   border-right: 1px dashed gray;
@@ -238,4 +246,17 @@ export default {
 .p span{
   font-size: .5rem;
 }
+.history{
+  text-align: center;
+  padding: 0.3rem 0 0.3rem 0;
+}
+.divvvv{
+  position:fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  background: white;
+}
+
 </style>
