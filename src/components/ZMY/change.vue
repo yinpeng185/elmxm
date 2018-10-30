@@ -48,7 +48,6 @@ export default {
         //用于表示用户代理是否应该在跨域请求的情况下从其他域发送cookies。
           withCredentials: true, // 默认false
         }).then((data) => {
-            // if(data.data.status == 200){}
             this.code = data.data.code;
         });
       },

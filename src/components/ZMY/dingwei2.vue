@@ -1,7 +1,7 @@
 <template>
     <div class="all">
         <header>
-           <router-link class="luy" :to="{name:'first'}">V</router-link>
+           <p @click="houtui()" class="luy">V</p>
            <span>{{city.name}}</span>
            <router-link to="/dingwei">
             <span class="i2">切换城市</span>
@@ -22,10 +22,10 @@
        <div v-if="down" class="lsjl">
            <p>搜索历史</p>
            <ul>
-               <li v-for="(csx,index) in csxx" :key="index">
+               <li @click="dizhi2(index)" v-for="(csx,index) in csxx" :key="index">
                    <p v-for="(cs,index) in csx" :key="index">{{cs}}</p>
                </li>
-               <li @click="tingzhi()">清楚记录</li>
+               <li @click="tingzhi()">清除记录</li>
            </ul>
        </div>
     </div>
@@ -36,6 +36,7 @@ export default {
     data(){
         return{
             value: false,
+            value1: true,
             down: false,
             cid: "",
             xinxi: "",
@@ -64,6 +65,9 @@ export default {
     })
     },
     methods:{
+        houtui(){
+            this.$router.push({path:"/first"})
+        },
         ctss(){
             this.value = true;
             this.down = false;
@@ -82,11 +86,18 @@ export default {
         },
         dizhi(index){
              this.quan.push(this.xinxi[index].name,this.xinxi[index].address);
-             if(this.csxx.join('').indexOf(this.quan) == -1){
+             if(this.csxx.join().indexOf(this.quan) == -1){
                  this.csxx.unshift(this.quan);
              }            
              this.$store.commit("dizhicz", this.csxx);
+             this.$store.commit("dizhipd", this.value1);
              this.$router.push({path:"/first"});
+        },
+        dizhi2(index){
+             this.$router.push({path:"/first"});
+             this.$store.commit("dizhipd", !this.value1);
+             this.$store.commit("dizhiin", index);
+             console.log(this.$store.state.index);
         },
         tingzhi() {
             this.down = false;

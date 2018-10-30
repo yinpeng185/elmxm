@@ -11,7 +11,8 @@
               <span>请选择地址...</span>
           </router-link>
       <router-link v-else to="/dingwei"> 
-              <span>{{csxx[0][0]}}</span>
+              <span v-if="value2">{{csxx[0][0]}}</span>
+              <span v-else>{{csxx[index][0]}}</span>
           </router-link>
  </div>
  <div id="hao1">
@@ -134,7 +135,9 @@ export default {
     name: "",
     value: true,
     value1: true,
+    value2: true,
     csxx: "",
+    index: "",
      imgs1: [
       { title: "甜品饮品", src: img1 },
       { title: "商超便利", src: img2 },
@@ -189,12 +192,24 @@ export default {
     }else{
       this.value = this.$store.state.value;
     }
+    if(this.csxx == undefined){
+      this.value1 = true;
+      this.csxx = ["请选择地址.."];
+    }
+
     if(this.$store.state.dz == undefined){
       this.value1 = true;
     }else{
       this.value1 = this.$store.state.value;
       this.csxx = this.$store.state.dz;
+
     }
+    if(this.$store.state.index !== undefined){
+      this.value2 = this.$store.state.value1;
+      this.index = this.$store.state.index;
+    }
+          
+    console.log(this.csxx);
       let loadingInstance = Loading.service({
         fullscreen:true
       });

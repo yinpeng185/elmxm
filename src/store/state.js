@@ -4,7 +4,9 @@ export default  {
     username: "",
     dz: "",
     value: false,
+    value1: true,
     lujing: "/my",
-    ssls: ["历史记录"]
+    ssls: ["历史记录"],
+    index: ""
   }),
   }

@@ -7,7 +7,13 @@ export default{
     dizhicz(store, csxx){
       this.state.dz = csxx;
     },
+    dizhiin(store, index){
+      this.state.index = index;
+    },
+    dizhipd(store, value1){
+      this.state.value1 = value1;
+    },
     sousuols(store, arr){
-      this.state.ssls=arr;
+      this.state.ssls = arr;
     }
   }
