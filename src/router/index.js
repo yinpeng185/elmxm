@@ -58,7 +58,7 @@ export default new Router({
       path: '/eat',
       name:"eat",
       component: Eat,
-    },,{
+    },{
       path: '/neirong/:id',
       name:"neirong",
       component: Neirong,
