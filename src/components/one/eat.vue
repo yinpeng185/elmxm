@@ -1,7 +1,7 @@
 <template>
     
         <ul class="content_ul">
-   <router-link tag="li" :key="index" v-for="(k,index) in data" to="/1">
+   <router-link tag="li" :key="index" v-for="(k,index) in data" :to="{path:'/neirong/'+k.id}">
         <div>
             <img class="img2" :src="'https://elm.cangdu.org/img/'+k.image_path" alt="">
         </div>
@@ -23,7 +23,7 @@
             <p>
                 <span class="sp7">￥{{k.float_minimum_order_amount}}起送/</span>
                 <span class="sp7">{{k.piecewise_agent_fee.tips}}</span>
-                <span class="sp7">{{k.distance}}/{{k.order_lead_time}}</span>
+                <span class="sp7">{{k.distance}}<span style="color:blue">/{{k.order_lead_time}}</span></span>
             </p>
         </div>
     </router-link>
@@ -51,6 +51,7 @@ export default {
         //在成功的时候,关闭加载提示
         loadingInstance.close();
       this.data = data.data;
+      console.log(data.data);
     });
   }
 }

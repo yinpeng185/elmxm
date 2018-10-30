@@ -240,12 +240,12 @@ export default {
   border: 1px solid lightgray;
   margin-top: 3%;
   width: 100%;
-  height: 30px;
+  height: 0.3rem;
 }
 #sum img {
-  width: 20px;
-  margin-top: 5px;
-  margin-left: 10px;
+  width: 0.2rem;
+  margin-top: 0.05rem;
+  margin-left: 0.1rem;
 }
 .s1 {
   /* border: 1px solid yellow; */
@@ -265,7 +265,7 @@ export default {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  margin-top: 50px;
+  margin-top: 0.5rem;
 }
 #d2 {
   /* border:1px solid black; */
@@ -273,12 +273,12 @@ export default {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  margin-top: 50px;
+  margin-top: 0.5rem;
 }
 #hao3 {
   /* border: 1px solid black; */
   background: blue;
-  height: 50px;
+  height: 0.5rem;
   width: 100%;
   position: fixed;
   z-index: 6;
@@ -366,7 +366,7 @@ export default {
 }
 .content_div p > span:last-child {
   float: right;
-  margin-right: 10px;
+  margin-right: 0.1rem;
 }
 .content_div #sp1 {
   background: yellow;
