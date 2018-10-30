@@ -9,6 +9,7 @@ import First from '../components/one/first'
 //@:直接找到src根目录
 import Sweet from '@/components/one/sweet'
 import Eat from '@/components/one/eat'
+import Neirong from '@/components/one/neirong'
 import MY from '../components/MY/MY'
 import Msite from '../page/msite/msite'
 import Download from '../page/download/download'
@@ -57,6 +58,10 @@ export default new Router({
       path: '/eat',
       name:"eat",
       component: Eat,
+    },{
+      path: '/neirong/:id',
+      name:"neirong",
+      component: Neirong,
     }, {
       path: '/my',      //我的界面
       name: 'my',     
