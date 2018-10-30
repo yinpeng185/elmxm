@@ -12,6 +12,7 @@
                <img src='../../images/elmlogo.jpeg' >
                <p>下载饿了么APP</p>
                <button>下载</button>
+               <!-- <button @click="open5">下载</button> -->
            </div> 
             <!-- <button>下载饿了么APP</button>
             <div class="determine" >下载</div> -->
@@ -23,6 +24,13 @@
 
     export default {
         name:"download",
+    //     methods: {
+    //   open5() {
+    //     this.$alert('<strong>这是 <i>HTML</i> 片段</strong>', 'HTML 片段', {
+    //       dangerouslyUseHTMLString: true
+    //     });
+    //   }
+    // }
     
     }
 </script>
