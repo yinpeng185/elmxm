@@ -2,7 +2,7 @@
 <div>
     <div class="hello">
          <router-link to="/my"><i class="el-icon-arrow-left"></i></router-link>
-         <span class="span">我的优惠</span>
+         <span class="sa">我的优惠</span>
     </div>
     <div class="div1">
       <div class="divv1">
@@ -70,9 +70,12 @@
             </div>
             <div>限品类：快餐便当、特色菜系、甜品饮品、异国料理</div>
           </div>
-          <div class="history">查看历史记录 <i class="el-icon-arrow-right"></i></div>
+          <router-link to="/my/benefit/history1"><div class="history"> <span class="spannn">查看历史记录<i class="el-icon-arrow-right"></i></span></div></router-link>   
         </div>
-      
+      <div class="divvvv">
+        <div class="divl"><router-link to="/my/benefit/history2"><span class="span">兑换红包</span> </router-link> </div>      
+        <div class="divr"><router-link to="/my/benefit/history3"><span class="span">推荐有奖</span> </router-link>  </div>       
+      </div>
       </div>
       
       <div v-else class="div3">
@@ -90,10 +93,7 @@
           </div>
         </div>
       </div>
-        <div class="divvvv">
-        <div class="divl">红包</div>
-        <div class="divr">商家代金券</div>
-      </div>
+        
     </div>
 </div>  
 </template>
@@ -147,7 +147,7 @@ export default {
   float: left;
   margin-top: 0.01rem;
 }
-.span {
+.sa {
   color: white;
   font-size: 0.3rem;
   z-index: 5;
@@ -257,6 +257,12 @@ export default {
   width: 100%;
   display: flex;
   background: white;
+}
+.span{
+  color: black;
+}
+.spannn{
+  color: gray;
 }
 
 </style>
