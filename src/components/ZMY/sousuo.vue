@@ -10,7 +10,7 @@
        </div>
        <div class="d1" v-if="value1">
           <ul>
-               <li v-for="(jl, index) in arr" :key="index">{{jl}}</li>
+               <li @click="lishi(index)" v-for="(jl, index) in arr" :key="index">{{jl}}</li>
                <li @click="tingzhi()">清楚历史记录</li>
           </ul>
        </div>
@@ -68,6 +68,9 @@ export default {
           this.value1 = false;
           this.arr = ["历史记录"];
           this.$store.commit("sousuols", this.arr);
+      },
+      lishi(index){
+          this.txt = this.arr[index];
       }
   }
 }
