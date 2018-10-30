@@ -24,7 +24,7 @@
         </div>
     </div>
     <p class="bd">账号绑定</p>
-    <div class="two" @click="open">
+    <div class="two" @click="open12">
         <div class="two1">
             <img src="../../images/bindphone.png" alt="">
             <span>手机</span>
@@ -55,13 +55,12 @@ export default {
         this.name = this.$store.state.username;
     },
     methods: {
-      open() {
-        this.$confirm('请在手机APP中设置', '提示', {
-          confirmButtonText: '确定',
-          cancelButtonText: '好的',
-          type: 'warning',
-          center: true
-        })
+      open12() {
+        this.$notify({
+          title: '！',
+          dangerouslyUseHTMLString: true,
+          message: '<strong>请在手机APP中设置</strong>'
+        });
       },
       tuichu(name){
           let api = "https://elm.cangdu.org/v2/signout";
