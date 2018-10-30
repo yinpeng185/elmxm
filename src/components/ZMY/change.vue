@@ -34,6 +34,7 @@ export default {
       codeNumer: ""
     };
   },created() {
+    this.username = this.$route.query.name;
     this.huanma2();
   },
   methods:{

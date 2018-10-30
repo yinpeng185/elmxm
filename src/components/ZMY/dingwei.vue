@@ -56,21 +56,17 @@ export default {
   let api =
       "https://elm.cangdu.org/v1/cities?type=group";
     this.$http.get(api).then(data => {
-      console.log("成功了......");
-    //   console.log(data);
       this.data = data.data;
     });
 
     let dwc = "https://elm.cangdu.org/v1/cities?type=guess";
     this.$http.get(dwc).then(data => { 
        this.dingwei = data.data;
-       console.log(data.data);
     })
 
     let htc = "https://elm.cangdu.org/v1/cities?type=hot";
     this.$http.get(htc).then(data => { 
        this.hot = data.data;
-    //    console.log(this.hot);
     })
   },
   computed:{

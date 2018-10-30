@@ -11,7 +11,7 @@
               <span>请选择地址...</span>
           </router-link>
       <router-link v-else to="/dingwei"> 
-              <span>{{csxx}}</span>
+              <span>{{csxx[0][0]}}</span>
           </router-link>
  </div>
  <div id="hao1">

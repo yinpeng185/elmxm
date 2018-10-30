@@ -19,10 +19,13 @@
                 </li>
            </ul>
        </div>
-       <div v-else class="lsjl">
+       <div v-if="down" class="lsjl">
            <p>搜索历史</p>
            <ul>
-               <li></li>
+               <li v-for="(csx,index) in csxx" :key="index">
+                   <p v-for="(cs,index) in csx" :key="index">{{cs}}</p>
+               </li>
+               <li @click="tingzhi()">清楚记录</li>
            </ul>
        </div>
     </div>
@@ -33,15 +36,27 @@ export default {
     data(){
         return{
             value: false,
+            down: false,
             cid: "",
             xinxi: "",
             city: "",
             keyword: "",
             lishi: [],
-            csxx: ""
+            csxx: [],
+            quan: []
         }
     },
     created() {
+        if(this.$store.state.dz == undefined){
+            this.csxx = [];
+        }else{
+            this.csxx = this.$store.state.dz;
+        }
+
+        if(this.csxx.length !== 0){
+            this.down = true;
+        }
+        
         this.cid = this.$route.params.id;
         let cityy = "https://elm.cangdu.org/v1/cities/"+this.cid;
         this.$http.get(cityy).then(data => { 
@@ -51,6 +66,7 @@ export default {
     methods:{
         ctss(){
             this.value = true;
+            this.down = false;
             let api = "https://elm.cangdu.org/v1/pois?city_id="+this.cid+"&keyword="+this.keyword+"&type=search";
         this.$http({
           method: 'get',
@@ -61,15 +77,22 @@ export default {
                 alert("请输入内容!");
             }else{
                 this.xinxi = data.data;
-                console.log(data.data); 
             }    
         });
         },
         dizhi(index){
-             this.csxx = this.xinxi[index].name;
+             this.quan.push(this.xinxi[index].name,this.xinxi[index].address);
+             if(this.csxx.join('').indexOf(this.quan) == -1){
+                 this.csxx.unshift(this.quan);
+             }            
              this.$store.commit("dizhicz", this.csxx);
              this.$router.push({path:"/first"});
-        }     
+        },
+        tingzhi() {
+            this.down = false;
+            this.csxx = undefined;
+            this.$store.commit("dizhicz", this.csxx);
+        }
     }
 }
 </script>
@@ -142,11 +165,23 @@ export default {
         color: black;
     }
     .lsjl{
-        font-size: 0.16rem;
+        font-size: 0.18rem;
         padding: 0 3%;
         background: white;
     }
     .lsjl li{
         color: black;
+        margin: 0.15rem 0;
+        border-bottom: 1px solid black;
+    }
+    .lsjl li p{
+        margin: 0.1rem 0;
+    }
+    .lsjl li:first-child{
+        margin: 0.1rem 0;
+    }
+    .lsjl li:last-child{
+        text-align: center;
+        padding-bottom: 0.1rem; 
     }
 </style>

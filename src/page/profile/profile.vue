@@ -33,7 +33,7 @@
     </div>
     <p class="bd">安全设置</p>
     <div class="thre"> 
-        <div class="thre1">
+        <div @click="gai()" class="thre1">
             <span>登录密码</span>
             <span class="sp">修改</span>          
             <i class="el-icon-arrow-right"></i>                        
@@ -70,6 +70,9 @@ export default {
               this.$router.push({path:"/first"})
               this.$store.commit("saveuser", name=undefined); 
           })         
+      },
+      gai(){
+          this.$router.push({path:"/change", query:{name:this.$store.state.username}});
       }
     }
   }
