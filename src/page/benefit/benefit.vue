@@ -14,7 +14,9 @@
       <div  v-if="show2" class="div2">
         <div class="zydiv">
           <span class="san">有3个红包即将到期</span>
+          <router-link to="/my/benefit/hbDescription">
           <span class="red"><img class="img" src="../../images/description.png" alt="">红包说明</span> 
+          </router-link>
         </div>
       </div>
       <div v-else class="div3">
