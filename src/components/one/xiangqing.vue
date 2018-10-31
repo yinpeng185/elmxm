@@ -1,7 +1,7 @@
 <template>
 <div>
     <div id="s1">
-         <router-link :to="{path:'/neirong/'+this.id}">
+         <router-link :to="{path:'/neirongo/'+this.id}">
                <i style="color:white;font-size:0.3rem;float:left;margin-top:0.12rem;" class="el-icon-arrow-left"></i>
          </router-link>
        <span>商家详情</span>
