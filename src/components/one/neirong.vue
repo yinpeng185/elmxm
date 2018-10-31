@@ -204,8 +204,6 @@ export default {
     this.$http.get(apc2).then(data => {      
       this.onee = data.data;
     });
-
-
   },
    methods:{
         change1(){
@@ -235,9 +233,6 @@ export default {
    width:100%;
   
 }
-.span div{
-  /* z-index: -5; */
-}
     .all:before{
       filter:blur(500px);
     }
@@ -247,14 +242,9 @@ export default {
     .all{
       position: relative;
       background-size:100% 100%;
-      /* width:100%; */
-      /* height: 1rem; */
-      /* z-index:2; */
     }
     .top{
       position:fixed;
-      /* border:1px solid red; */
-      /* z-index: 2; */
       width: 100%;
       height: 1rem;
     }
@@ -263,7 +253,6 @@ export default {
       font-size: 0.3rem;
       left:0rem;
       top:-0.4rem;
-      /* z-index:2; */
     }
     .el-icon-arrow-right{
        position: relative;
@@ -280,16 +269,12 @@ export default {
     }
     .a1{
       width:80%;
-      /* border:1px solid black; */
       top:-0.6rem;
       right:-0.9rem;
     }
     .a2{
       padding: 0.03rem;
       font-size: 0.12rem;
-    }
-    .el-rate{
-      /* z-index: -6; */
     }
     .a3{
       padding: 0.03rem;
@@ -311,45 +296,31 @@ export default {
       text-align: center;
       line-height: 0.4rem; 
       padding: 0.15rem 0.05rem 0.05rem 0.05rem;
-      /* z-index:2; */
     }
     .q1 p{
-      /* border: 1px solid lightgray; */
-      /* width:50%; */
       color: black;
       font-size: 0.15rem;
     }
     .w1{
       width:100%;
-      /* border: 1px solid black; */
-      /* height: 5rem; */
       display: flex;
       justify-content: space-around;
       padding-top: 1.5rem;
-      /* z-index: -1; */
     }
     .w2{
       width:27%;
       border: 1px solid lightgray;
-      /* height: 5rem; */
     }
     .ww{
-      /* width:25%; */
       border: 1px solid lightgray;
       padding:0.3rem 0 0.3rem 0.1rem;
       font-size:0.18rem;
     }
     .w3{
       width:75%;
-      /* border: 1px solid black; */
-      /* z-index:-2; */
-      /* height: 5rem; */
     }
     .e1{
-      /* border: 1px solid black; */
-      /* height: 5rem; */
       padding-top: 1.5rem;
-      /* z-index: -1; */
     }
     .ee{
        border: 1px solid lightgray;
