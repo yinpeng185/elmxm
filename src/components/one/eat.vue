@@ -35,28 +35,21 @@
 <script>
 import { Loading } from 'element-ui';
 export default {
-  data: () => ({
-    data: []
-  }),
+props:{
+    data:{
+      type: Array,
+      // required: true
+    }
+},
+
    created() {
      
        let loadingInstance = Loading.service({
         fullscreen:true
       });
    
-    let api =
-      "https://elm.cangdu.org/shopping/restaurants?latitude=31.22967&longitude=121.4762";
-    //promise写法
-    this.$http.get(api).then(data => {
-        //在成功的时候,关闭加载提示
-        loadingInstance.close();
-      this.data = data.data;
-      // console.log(data.data);
-    });
-    if(this.$store.state.dataa !== undefined){
-         this.data = this.$store.state.dataa;
-     };
-     console.log(this.data);
+    
+    //  console.log(this.dataa);
   }
 }
 

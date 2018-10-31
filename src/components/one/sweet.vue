@@ -88,12 +88,13 @@
        </div> 
 </div>
 
-<eat class="eat"></eat>
+<eat v-bind:data="dataa" class="eat"></eat>
 </div>
 </template>
 
 <script>
 import eat from "../one/eat";
+import { Loading } from 'element-ui';
 
 export default {
     name:"sweet",
@@ -104,6 +105,7 @@ export default {
     data: [],
     data1: [],
     dataa: [],
+    indexx: "",
     datas:["起送价最低","配送速度最快","评分最高","智能排序","距离最近","销量最高"],
     datass:[],
     datasss:["品牌商家","外卖保","准时达","新店","在线支付","开发票"],
@@ -114,6 +116,20 @@ export default {
     }),
 
      created() {
+let loadingInstance = Loading.service({
+        fullscreen:true
+      });
+
+         let ap =
+      "https://elm.cangdu.org/shopping/restaurants?latitude=31.22967&longitude=121.4762&limit=50";
+    //promise写法
+    this.$http.get(ap).then(data => {
+        //在成功的时候,关闭加载提示
+        loadingInstance.close();
+      this.dataa = data.data;
+      // console.log(data.data);
+    });
+
         this.id = this.$route.query.id;
         this.old = this.$route.query.id;
         let api =
@@ -158,11 +174,11 @@ export default {
   },
   paixu(index){
       console.log(index+1);
-      let api = "https://elm.cangdu.org/shopping/restaurants?latitude=31.22967&longitude=121.4762&order_by="+index+1;
+      this.indexx = index+1;
+      let api = "https://elm.cangdu.org/shopping/restaurants?latitude=31.22967&longitude=121.4762&order_by="+this.indexx;
       this.$http.get(api).then(data => {
           this.dataa = data.data;
-          this.$store.commit("paixu", this.dataa);
-          console.log(this.dataa);
+        //   console.log(this.dataa);
       })
   }
 
