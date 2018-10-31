@@ -10,7 +10,8 @@ import First from '../components/one/first'
 import Sweet from '@/components/one/sweet'
 import Xiangqing from '@/components/one/xiangqing'
 import Eat from '@/components/one/eat'
-import Neirong from '@/components/one/neirong'
+import Neirongo from '@/components/one/neirongo'
+import Neirongt from '@/components/one/neirongt'
 import MY from '../components/MY/MY'
 import Msite from '../page/msite/msite'
 import Download from '../page/download/download'
@@ -63,9 +64,13 @@ export default new Router({
       name:"eat",
       component: Eat,
     },{
-      path: '/neirong/:id',    //每个商店 商品 评价
-      name:"neirong",
-      component: Neirong,
+      path: '/neirongo/:id',    //每个商店 商品 评价
+      name:"neirongo",
+      component: Neirongo,
+    },{
+      path: '/neirongt/:id',    //每个商店 商品 评价
+      name:"neirongt",
+      component: Neirongt,
     }, {
       path: '/xiangqing/:id',       //商家详情
       name:"xiangqing",

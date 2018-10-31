@@ -5,7 +5,7 @@
        
    <div class="top">
 <div class="all" :style="{ 'background-image': 'url(https://elm.cangdu.org/img/' + data.image_path + ')','background-repeat':'no-repeat','background-size':'cover', }">
-             <router-link to="/first"> 
+             <router-link to="/sweet"> 
            <i style="color:white" class="el-icon-arrow-left"></i>
       
 
@@ -152,7 +152,7 @@
 
 <script>
 export default {
-    name:"neirong",
+    name:"neirongt",
     data: () => ({
     data: [],
     datas: [],

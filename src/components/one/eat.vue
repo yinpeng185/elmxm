@@ -1,7 +1,7 @@
 <template>
        
         <ul class="content_ul">
-   <router-link tag="li" :key="index" v-for="(k,index) in data" :to="{path:'/neirong/'+k.id}">
+   <router-link tag="li" :key="index" v-for="(k,index) in data" :to="{path:'/neirongt/'+k.id}">
         <div>
             <img class="img2" :src="'https://elm.cangdu.org/img/'+k.image_path" alt="">
         </div>
