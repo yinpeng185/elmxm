@@ -7,6 +7,7 @@ export default  {
     value1: true,
     lujing: "/my",
     ssls: ["历史记录"],
-    index: ""
+    index: "",
+    dataa: []
   }),
   }

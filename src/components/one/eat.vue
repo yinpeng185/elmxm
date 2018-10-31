@@ -1,5 +1,5 @@
 <template>
-    
+       
         <ul class="content_ul">
    <router-link tag="li" :key="index" v-for="(k,index) in data" :to="{path:'/neirong/'+k.id}">
         <div>
@@ -35,11 +35,11 @@
 <script>
 import { Loading } from 'element-ui';
 export default {
-  
   data: () => ({
-    data: [],
+    data: []
   }),
    created() {
+     
        let loadingInstance = Loading.service({
         fullscreen:true
       });
@@ -51,8 +51,12 @@ export default {
         //在成功的时候,关闭加载提示
         loadingInstance.close();
       this.data = data.data;
-      console.log(data.data);
+      // console.log(data.data);
     });
+    if(this.$store.state.dataa !== undefined){
+         this.data = this.$store.state.dataa;
+     };
+     console.log(this.data);
   }
 }
 
