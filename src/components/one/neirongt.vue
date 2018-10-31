@@ -5,7 +5,7 @@
        
    <div class="top">
 <div class="all" :style="{ 'background-image': 'url(https://elm.cangdu.org/img/' + data.image_path + ')','background-repeat':'no-repeat','background-size':'cover', }">
-             <router-link to="/sweet"> 
+             <router-link :to="{path:'/sweet', query:{id:this.idd}}"> 
            <i style="color:white" class="el-icon-arrow-left"></i>
       
 
@@ -164,12 +164,15 @@ export default {
     num7:0,
     facevalue:"0",
     id:"",
+    idd:"",
     show1:true,
     show2:false,
     show3:false,
     show4:true
   }),
    created() {
+       this.idd = this.$route.query.id;
+       console.log(this.idd);
        this.id = this.$route.params.id;
     //    let loadingInstance = Loading.service({
     //     fullscreen:true

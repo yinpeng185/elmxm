@@ -1,7 +1,7 @@
 <template>
        
         <ul class="content_ul">
-   <router-link tag="li" :key="index" v-for="(k,index) in data" :to="{path:'/neirongt/'+k.id}">
+   <router-link tag="li" :key="index" v-for="(k,index) in data" :to="{path:'/neirongt/'+k.id,query:{id:shopid}}">
         <div>
             <img class="img2" :src="'https://elm.cangdu.org/img/'+k.image_path" alt="">
         </div>
@@ -39,6 +39,9 @@ props:{
     data:{
       type: Array,
       // required: true
+    },
+    shopid:{
+      type: String
     }
 },
 
@@ -49,7 +52,7 @@ props:{
       });
    
     
-    //  console.log(this.dataa);
+    //  console.log(this.shopid);
   }
 }
 

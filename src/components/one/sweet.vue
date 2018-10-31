@@ -88,7 +88,7 @@
        </div> 
 </div>
 
-<eat v-bind:data="dataa" class="eat"></eat>
+<eat v-bind:shopid="id" v-bind:data="dataa" class="eat"></eat>
 </div>
 </template>
 
