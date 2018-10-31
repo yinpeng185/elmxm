@@ -2,7 +2,7 @@
 <div>
     <div class="hello">
          <router-link to="/my"><i class="el-icon-arrow-left"></i></router-link>
-         <span class="span">我的红包</span>
+         <span class="sa">我的优惠</span>
     </div>
     <div class="div1">
       <div class="divv1">
@@ -18,9 +18,66 @@
           <span class="red"><img class="img" src="../../images/description.png" alt="">红包说明</span> 
           </router-link>
         </div>
-
-
+        <div class="zysdiv">
+          <div class="zys1">
+            <div class="zys11">
+              <p class="p">￥<span>1</span>.0</p>
+              <p>满20元可</p>
+              <p>用</p>
+            </div>
+            <div class="zys12">
+              <p>分享红包</p>
+              <p>2017-05-23到期</p>
+              <p>限收货手机号为</p>
+              <p>13681711254</p>
+            </div>
+            <div class="zys13">
+              <p>剩3日</p>
+            </div>
+          </div>
+          <div class="zys1">
+            <div class="zys11">
+              <p class="p">￥<span>2</span>.0</p>
+              <p>满40元可</p>
+              <p>用</p>
+            </div>
+            <div class="zys12">
+              <p>分享红包</p>
+              <p>2017-05-23到期</p>
+              <p>限收货手机号为</p>
+              <p>13681711254</p>
+            </div>
+            <div class="zys13">
+              <p>剩3日</p>
+            </div>
+          </div>
+          <div>
+            <div class="zys1">
+              <div class="zys11">
+                <p class="p">￥<span>4</span>.5</p>
+                <p>满30元可</p>
+                <p>用</p>
+              </div>
+              <div class="zys12">
+                <p>分享红包</p>
+                <p>2017-05-23到期</p>
+                <p>限收货手机号为</p>
+                <p>13681711254</p>
+              </div>
+              <div class="zys13">
+                <p>剩3日</p>
+                </div>
+            </div>
+            <div>限品类：快餐便当、特色菜系、甜品饮品、异国料理</div>
+          </div>
+          <router-link to="/my/benefit/history1"><div class="history"> <span class="spannn">查看历史记录<i class="el-icon-arrow-right"></i></span></div></router-link>   
+        </div>
+      <div class="divvvv">
+        <div class="divl"><router-link to="/my/benefit/history2"><span class="span">兑换红包</span> </router-link> </div>      
+        <div class="divr"><router-link to="/my/benefit/history3"><span class="span">推荐有奖</span> </router-link>  </div>       
       </div>
+      </div>
+      
       <div v-else class="div3">
         <div>
           <router-link to="/my/benefit/daijin">
@@ -36,7 +93,7 @@
           </div>
         </div>
       </div>
-      
+        
     </div>
 </div>  
 </template>
@@ -64,9 +121,6 @@ export default {
       this.show3 = false;
       this.show4 = true;
     }, 
-    // show44(){
-    //   show4 = false;
-    // }
   }
 
 }
@@ -93,7 +147,7 @@ export default {
   float: left;
   margin-top: 0.01rem;
 }
-.span {
+.sa {
   color: white;
   font-size: 0.3rem;
   z-index: 5;
@@ -121,13 +175,13 @@ export default {
   color: blue;
   border-bottom: 2px solid blue;
 }
-
 .img{
   height: 0.15rem;
 }
 .red{
   font-size: 0.2rem;
   float: right;
+  padding-right: 0.2rem;
   color: blue;
 }
 .san{
@@ -151,12 +205,64 @@ export default {
   background: springgreen;
   color: white;
   height: 0.5rem;
-  font-size: 0.2rem;
+  font-size: 0.1rem;
   width: 2rem;
   border-radius: 10px;
 }
 .zydiv{
-  border: 2px solid black;
+  /* border: 2px solid black; */
   margin-top: .1rem;
+  margin-left: 0.2rem;
 }
+.zysdiv{
+  /* background: springgreen; */
+  width: 82%;
+  margin-right: 1rem;
+  padding: 0.3rem;
+}
+.zys1{
+  border-top: 3px dashed red;
+  display: flex;
+  width: 90%;
+  padding: 0.2rem 0 0.2rem 0;
+  margin-top: 0.2rem;  
+  font-size: 0.1rem;
+}
+.zys11{
+  border-right: 1px dashed gray;
+  padding-right: 0.2rem;
+  margin-right: 0.2rem;
+}
+.zys12{
+  padding-right: 0.1rem;
+  margin-right: 0.1rem;
+}
+.zys13{
+  color: red;
+}
+.p{
+  color: red;
+}
+.p span{
+  font-size: .5rem;
+}
+.history{
+  text-align: center;
+  padding: 0.3rem 0 0.3rem 0;
+}
+.divvvv{
+  position:fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  background: white;
+}
+.span{
+  color: black;
+}
+.spannn{
+  color: gray;
+}
+
 </style>

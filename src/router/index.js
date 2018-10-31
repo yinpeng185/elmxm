@@ -31,6 +31,9 @@ import Detail from '../page/points/children/detail'
 import balDetail from '../page/balance/children/detail'
 import Daijin from '../page/benefit/children/daijin'
 import HbDescription from '../page/benefit/children/hbDescription'
+import History1 from '../page/benefit/children/history1'
+import History2 from '../page/benefit/children/history2'
+import History3 from '../page/benefit/children/history3'
 
 Vue.use(Router)
 Vue.use(Vuex)
@@ -99,6 +102,15 @@ export default new Router({
     },{
       path: '/my/points/detail', //积分说明页
       component: Detail,
+    },{
+      path: '/my/benefit/history1', //1页
+      component: History1,
+    },{
+      path: '/my/benefit/history2', //2页
+      component: History2,
+    },{
+      path: '/my/benefit/history3', //3页
+      component: History3,
     },{
       path: '/my/benefit', //红包页
       component: Benefit,
