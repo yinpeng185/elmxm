@@ -66,10 +66,70 @@
       </div>
 
        <div class="e1" v-if="show2">
+         <div class="ee">
              <div class="e2">
-                 564
+                   <p class="h1">4.4</p>
+                   <span class="h2">综合评价</span>
+                   <p class="h3">高于周边商家76.9%</p>
+             </div>
+             <div class="e3">
+                 <div>
+                    <span class="h4">服务态度  </span>
+                     <el-rate class="o1" v-model="value5" disabled show-score text-color="#ff9900" score-template="{value}">
+                    </el-rate>
+                   
+                </div>
+                <div>
+                   <span class="h4">菜品评价</span>
+                    <el-rate class="o1" v-model="value5" disabled show-score text-color="#ff9900" score-template="{value}">
+                    </el-rate>
+                    
+                </div>
+                <div>
+                    <p class="h4">送达时间<span class="h5">分钟</span></p>
+                </div>            
              </div>
       </div>
+
+      <div>       
+                <ul class="f1">
+                  <li class="f2" v-for="(daa,index) in agree" :key="index" @click="menu1(index)" :class="{active:index==facevalue}"><span :class="{active:index==facevalue}">{{daa.name}}({{daa.count}})</span></li>
+                </ul>
+       
+     </div>
+     
+      <div class="gg">
+         <div class="g1">           
+                <ul class="g2" v-for="(daaa,index) in onee" :key="index">
+                  <li class="g3" >
+                    <div style="display:flex;justify-content: space-between;">
+                    <span>{{daaa.username}}</span>
+                    <span>{{daaa.rated_at}}</span>
+                    </div>
+                    <div style="display:flex;">
+                     <span class="span">
+                       <el-rate v-model="daaa.rating_star" disabled show-score text-color="#ff9900" score-template="{value}" class="el-rate">
+                    </el-rate>
+                </span>
+                <span>{{daaa.time_spent_desc}}</span>
+                </div>
+<ul style="display:flex;flex-direction:row;">
+  <li v-for="(da,index) in daaa.item_ratings" :key="index"> 
+  <img style="width:0.8rem;margin-left:0.1rem;margin-top:0.1rem;"
+                 :src="'https://fuss10.elemecdn.com/'+da.image_hash+'.jpeg'" alt="">
+                <p>{{da.food_name}}</p>
+  </li>
+  </ul>
+                
+
+                  </li>
+                </ul>
+          </div>
+     </div>
+
+     </div>
+
+     
 
 
  </div>
@@ -82,6 +142,10 @@ export default {
     data: [],
     datas: [],
     datass:[],
+    agree:[],
+    onee:[],
+    value5: 3.7,
+    facevalue:"0",
     id:"",
     show1:true,
     show2:false,
@@ -112,22 +176,38 @@ export default {
       this.datass = data.data;
     });
  
-    
+    let apc1 =
+      "https://elm.cangdu.org/ugc/v2/restaurants/1/ratings/tags";
+    this.$http.get(apc1).then(data => {      
+      this.agree = data.data;
+    });
+
+     let apc2 =
+      "https://elm.cangdu.org/ugc/v2/restaurants/1/ratings?offset=0&limit=10";
+    this.$http.get(apc2).then(data => {      
+      this.onee = data.data;
+    });
+
 
   },
    methods:{
         change1(){
         this.show1 = true;
         this.show2 = false;
+
         this.show3 = false;
         this.show4 = true;
   },
   change2(){
         this.show2 = true;
         this.show1 = false;
+
         this.show4 = false;
         this.show3 = true;
   },
+       menu1(id) {      
+      this.facevalue = id;
+  }
 }
 }
 </script>
@@ -137,6 +217,9 @@ export default {
    position: fixed;
    width:100%;
   
+}
+.span div{
+  z-index: -5;
 }
     .all:before{
       filter:blur(500px);
@@ -179,6 +262,9 @@ export default {
     .a2{
       padding: 0.03rem;
       font-size: 0.12rem;
+    }
+    .el-rate{
+      z-index: -6;
     }
     .a3{
       padding: 0.03rem;
@@ -234,10 +320,28 @@ export default {
       /* height: 5rem; */
     }
     .e1{
-       width:100%;
-      border: 1px solid lightgray;
-      height: 5rem;
+      /* border: 1px solid black; */
+      /* height: 5rem; */
       padding-top: 1.5rem;
+      z-index: -1;
+    }
+    .ee{
+       border: 1px solid lightgray;
+        height: 1.5rem;
+        display: flex;
+        justify-content: space-around;
+    }
+    .e2{
+       /* border: 1px solid black; */
+       width: 50%;
+       text-align: center;
+       margin-top: 0.4rem;
+    }
+    .e3{
+       /* border: 1px solid black; */
+       width: 50%;
+       /* text-align: center; */
+       margin-top: 0.4rem;
     }
     .t1{
       width:100%;
@@ -276,5 +380,57 @@ export default {
     .z5{
        top:0.8rem;
       left:0.65rem;
+    }
+  
+.f1 span{
+    font-size:.15rem;
+    color: black;
+}
+.f1 .active {
+  background: #3190e8;
+  color:white;
+}
+    .f1{
+      /* border:1px solid black; */
+      padding: 0.1rem;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      width:90%;
+    }
+    .f2{
+      background: rgb(209, 227, 241);
+      border: 1px solid lightgray;
+      padding: 0.05rem;
+      text-align: center;
+      border-radius: 0.05rem;
+      margin-top: 0.03rem;
+    }
+    .gg{
+      z-index: -1;
+    }
+    .g3{
+      padding-top: 0.1rem;
+      border: 1px solid lightgray;
+      height: 1.5rem;
+    }
+    .h1{
+      font-size: 0.30rem;
+      color: orangered;
+    }
+    .h2{
+      font-size: 0.2rem;
+      color: gary;
+    }
+    .h3{
+      font-size: 0.12rem;
+      color: lightgary;
+    }
+    
+    .h4{
+      font-size: 0.2rem;
+    }
+    .h5{
+      font-size: 0.12rem;
     }
 </style>
