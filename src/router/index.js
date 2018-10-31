@@ -8,6 +8,7 @@ import First from '../components/one/first'
 //@:直接找到src根目录
 //@:直接找到src根目录
 import Sweet from '@/components/one/sweet'
+import Xiangqing from '@/components/one/xiangqing'
 import Eat from '@/components/one/eat'
 import Neirong from '@/components/one/neirong'
 import MY from '../components/MY/MY'
@@ -54,17 +55,21 @@ export default new Router({
       // name:'first',
       component: First,
     },{ 
-      path: '/sweet',
+      path: '/sweet',      //分类 排序 筛选 
       name:"sweet", 
       component: Sweet,
     },{
-      path: '/eat',
+      path: '/eat',     //附近商家下面的商店
       name:"eat",
       component: Eat,
     },{
-      path: '/neirong/:id',
+      path: '/neirong/:id',    //每个商店 商品 评价
       name:"neirong",
       component: Neirong,
+    }, {
+      path: '/xiangqing/:id',       //商家详情
+      name:"xiangqing",
+      component: Xiangqing,
     }, {
       path: '/my',      //我的界面
       name: 'my',     

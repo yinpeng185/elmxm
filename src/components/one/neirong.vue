@@ -3,7 +3,7 @@
 
      <div class="big">
        
-   <router-link to=""> 
+   <div class="top">
 <div class="all" :style="{ 'background-image': 'url(https://elm.cangdu.org/img/' + data.image_path + ')','background-repeat':'no-repeat','background-size':'cover', }">
              <router-link to="/first"> 
            <i style="color:white" class="el-icon-arrow-left"></i>
@@ -14,7 +14,7 @@
 </router-link>
 
             
-            <router-link to="/first"> 
+            <router-link :to='"/xiangqing/"+this.id'> 
             <div class="a1">
             
             <span class="a2">商家配送 / 分钟送达 / {{datas.tips}}</span>
@@ -23,7 +23,8 @@
             </div>
             </router-link>
      </div> 
-    </router-link>
+     </div>
+    
 
       <div class="q1">
           <p v-if="show3" class="q2" @click="change1()">商品</p>
@@ -34,7 +35,7 @@
       
   </div>
   
-    <div class="w1" v-if="show1">
+<div class="w1" v-if="show1">
              <div class="w2">
                <ul>
                  <li class="ww" v-for="(k,index) in datass" :key="index">{{k.name}}</li>
@@ -44,28 +45,42 @@
              <div class="w3">
                
                <div v-for="(k,index) in datass" :key="index" > 
-                 <div style="background:lightgray;height:0.5rem;position:absolute,width:75%">
-               <span style="font-size:0.2rem;font-weight:bold;position:relative;top:0.2rem;">{{k.name}}</span>
-               <span style="font-size:0.15rem;color:gray;position:relative;top:0.2rem;" v-if="k.description">{{k.description}}</span> 
+               <div style="background:lightgray;width:100%;height:0.5rem;line-height:0.5rem;">
+               <span style="font-size:0.2rem;font-weight:bold;">{{k.name}}</span>
+               <span style="font-size:0.15rem;color:gray;padding-top:0.5rem;" v-if="k.description">{{k.description}}</span> 
               </div>
 
                <ul>
                  <li class="t1" v-for="(da,index) in k.foods" :key="index">
+                   <div style="display:flex; justify-content: space-around;">
+                     <div>
                     <img class="img3" style="width:0.5rem;margin-left:0.1rem;margin-top:0.1rem;" :src="'https://elm.cangdu.org/img/'+da.image_path" alt="">
+                    </div>
+                    <div style="padding-top:0.1rem;width:1rem;">
                     <span class="z1">{{da.name}}</span>
                     <p class="z2">{{da.description}}</p>
                     <span class="z3"> 月售{{da.month_sales}}份 好评率{{da.satisfy_rate}}%</span>
-                    <p class="z4">{{da.description}}</p>
-                    <p style="color:red;font-size:0.13rem;" class="z5">￥{{da.specfoods[0].price}}<span style="color:gray;font-size:0.12rem;">起</span></p>
+                    <br>
+                    <span class="z4">{{da.description}}</span>
+                    <p style="color:red;font-size:0.13rem;" class="z5">￥{{da.specfoods[0].price}}<span style="color:gray;font-size:0.12rem;">起</span>                   
+                    </p>
+                    
+                    
+                    </div>
+                    <div style="padding-top:0.8rem">
+                      <i @click="count--" class="el-icon-remove"></i>{{count}}
+                      <i @click="count++" class="el-icon-circle-plus"></i>
+                    </div>
+                    </div>
                  </li>
                </ul>
             </div> 
                
                
              </div>
-      </div>
+</div>
 
-       <div class="e1" v-if="show2">
+<div class="e1" v-if="show2">
          <div class="ee">
              <div class="e2">
                    <p class="h1">4.4</p>
@@ -113,7 +128,7 @@
                 </span>
                 <span>{{daaa.time_spent_desc}}</span>
                 </div>
-<ul style="display:flex;flex-direction:row;">
+ <ul style="display:flex;flex-direction:row;">
   <li v-for="(da,index) in daaa.item_ratings" :key="index"> 
   <img style="width:0.8rem;margin-left:0.1rem;margin-top:0.1rem;"
                  :src="'https://fuss10.elemecdn.com/'+da.image_hash+'.jpeg'" alt="">
@@ -127,7 +142,7 @@
           </div>
      </div>
 
-     </div>
+</div>
 
      
 
@@ -144,7 +159,9 @@ export default {
     datass:[],
     agree:[],
     onee:[],
+    count:0,
     value5: 3.7,
+    num7:0,
     facevalue:"0",
     id:"",
     show1:true,
@@ -219,7 +236,7 @@ export default {
   
 }
 .span div{
-  z-index: -5;
+  /* z-index: -5; */
 }
     .all:before{
       filter:blur(500px);
@@ -228,19 +245,27 @@ export default {
            color:white;
     }
     .all{
-      position: absolute;
-      width:100%;
-      height:1rem;
-      z-index:2;
+      position: relative;
+      background-size:100% 100%;
+      /* width:100%; */
+      /* height: 1rem; */
+      /* z-index:2; */
     }
-    .all .el-icon-arrow-left{
+    .top{
+      position:fixed;
+      /* border:1px solid red; */
+      /* z-index: 2; */
+      width: 100%;
+      height: 1rem;
+    }
+    .el-icon-arrow-left{
       position: relative;
       font-size: 0.3rem;
       left:0rem;
       top:-0.4rem;
-      z-index:2;
+      /* z-index:2; */
     }
-    .all .el-icon-arrow-right{
+    .el-icon-arrow-right{
        position: relative;
        font-size: 0.3rem;
        top:-0.4rem;
@@ -264,7 +289,7 @@ export default {
       font-size: 0.12rem;
     }
     .el-rate{
-      z-index: -6;
+      /* z-index: -6; */
     }
     .a3{
       padding: 0.03rem;
@@ -278,15 +303,15 @@ export default {
       /* border: 1px solid black; */
       background: white;
       width:100%;
-      height: 0.4rem;
+      height: 0.43rem;
       position: fixed;
       top:1rem;
       display: flex;
       justify-content: space-around;
       text-align: center;
       line-height: 0.4rem; 
-      padding: 0.05rem;
-      z-index:2;
+      padding: 0.15rem 0.05rem 0.05rem 0.05rem;
+      /* z-index:2; */
     }
     .q1 p{
       /* border: 1px solid lightgray; */
@@ -301,6 +326,7 @@ export default {
       display: flex;
       justify-content: space-around;
       padding-top: 1.5rem;
+      /* z-index: -1; */
     }
     .w2{
       width:27%;
@@ -315,15 +341,15 @@ export default {
     }
     .w3{
       width:75%;
-      border: 1px solid lightgray;
-      z-index:-1;
+      /* border: 1px solid black; */
+      /* z-index:-2; */
       /* height: 5rem; */
     }
     .e1{
       /* border: 1px solid black; */
       /* height: 5rem; */
       padding-top: 1.5rem;
-      z-index: -1;
+      /* z-index: -1; */
     }
     .ee{
        border: 1px solid lightgray;
@@ -346,40 +372,24 @@ export default {
     .t1{
       width:100%;
       border: 1px solid lightgray;
-      height:1.2rem;
+      /* height:1.3rem; */
+      padding: 0.1rem 0 0.1rem 0;
       background:white;
-      z-index:-1;
-      position: relative;
     }
     .img3,.z1,.z2,.z3,.z4,.z5{
-      position: absolute;
       font-size: 0.12rem;
     }
     .z1{
-      top:0.1rem;
-      left:0.65rem;
       font-size: 0.13rem;
       font-weight: bold;
     }
     .z2{
-      top:0.3rem;
-      left:0.65rem;
       color:gray;
-    }
-    .z3{
-       top:0.5rem;
-      left:0.65rem;
     }
     .z4{
       border:1px solid red;
       border-radius: 30%;
-      top:0.63rem;
-      left:0.61rem;
       color:orangered;
-    }
-    .z5{
-       top:0.8rem;
-      left:0.65rem;
     }
   
 .f1 span{
@@ -407,7 +417,7 @@ export default {
       margin-top: 0.03rem;
     }
     .gg{
-      z-index: -1;
+      /* z-index: -1; */
     }
     .g3{
       padding-top: 0.1rem;
@@ -433,4 +443,6 @@ export default {
     .h5{
       font-size: 0.12rem;
     }
+   
+
 </style>
