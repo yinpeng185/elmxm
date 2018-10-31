@@ -15,8 +15,5 @@ export default{
     },
     sousuols(store, arr){
       this.state.ssls = arr;
-    },
-    paixu(store, dataa){
-      this.state.dataa = dataa;
     }
   }

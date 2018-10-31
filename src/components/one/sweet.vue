@@ -37,7 +37,7 @@
  </div>
 <div id="a2">
      <ul>
-          <li class="v1" v-for="value in data" :key="value.id">{{value.name}}--{{value.count}}</li>
+          <li @click="fenlei(value)" class="v1" v-for="value in data" :key="value.id">{{value.name}}--{{value.count}}</li>
 
      </ul>
  </div>
@@ -113,15 +113,36 @@ export default {
     show:false,
     show1:false,
     show2:false,
+    latitude: "",
+    longitude: "",
+    index: "",
+    vlid: ""
     }),
 
      created() {
 let loadingInstance = Loading.service({
         fullscreen:true
       });
+        this.id = this.$route.query.id;
+        this.old = this.$route.query.id;
+
+if(this.$store.state.dz == undefined){
+    this.latitude = 31.22967;
+    this.longitude = 121.4762;
+}else{
+    this.index = this.$store.state.index;
+       console.log(this.index);
+      this.latitude = this.$store.state.dz[this.index][2];
+      this.longitude = this.$store.state.dz[this.index][3];
+      console.log(this.latitude,this.longitude);
+}
+
+if(this.indexx == undefined){
+    this.indexx = "";
+}
 
          let ap =
-      "https://elm.cangdu.org/shopping/restaurants?latitude=31.22967&longitude=121.4762&limit=50";
+      "https://elm.cangdu.org/shopping/restaurants?latitude="+this.latitude+"&longitude="+this.longitude+"&limit=20";
     //promise写法
     this.$http.get(ap).then(data => {
         //在成功的时候,关闭加载提示
@@ -130,8 +151,7 @@ let loadingInstance = Loading.service({
       // console.log(data.data);
     });
 
-        this.id = this.$route.query.id;
-        this.old = this.$route.query.id;
+        
         let api =
       "https://elm.cangdu.org/shopping/v2/restaurant/category";
     //promise写法
@@ -139,7 +159,7 @@ let loadingInstance = Loading.service({
          //成功后的回调
         console.log('成功了---');
         //展示所有商店
-        // console.log(data.data);
+        console.log(data.data);
       this.arr = data.data;
     });
     let apii = "https://elm.cangdu.org/shopping/v1/restaurants/delivery_modes";
@@ -172,10 +192,21 @@ let loadingInstance = Loading.service({
       this.show1 = false;
       this.show = false;
   },
+  fenlei(value){
+       console.log(value.id);
+    //    this.index = this.$store.state.index;
+       this.vlid = value.id;
+       this.show = !this.show;
+       let api = "https://elm.cangdu.org/shopping/restaurants?latitude="+this.latitude+"&longitude="+this.longitude+"&limit=20&order_by="+this.indexx+"&restaurant_category_ids[]="+this.vlid;
+       this.$http.get(api).then(data => {
+          this.dataa = data.data;
+      })
+  },
   paixu(index){
       console.log(index+1);
+      this.show1 = !this.show1;
       this.indexx = index+1;
-      let api = "https://elm.cangdu.org/shopping/restaurants?latitude=31.22967&longitude=121.4762&order_by="+this.indexx;
+      let api = "https://elm.cangdu.org/shopping/restaurants?latitude="+this.latitude+"&longitude="+this.longitude+"&limit=20&order_by="+this.indexx+"&restaurant_category_ids[]="+this.vlid;
       this.$http.get(api).then(data => {
           this.dataa = data.data;
         //   console.log(this.dataa);

@@ -23,7 +23,8 @@
            <p>搜索历史</p>
            <ul>
                <li @click="dizhi2(index)" v-for="(csx,index) in csxx" :key="index">
-                   <p v-for="(cs,index) in csx" :key="index">{{cs}}</p>
+                   <p>{{csx[0]}}</p>
+                   <p>{{csx[1]}}</p>
                </li>
                <li @click="tingzhi()">清除记录</li>
            </ul>
@@ -79,25 +80,28 @@ export default {
         }).then(data => {
             if(this.keyword == ""){
                 alert("请输入内容!");
+                this.down = true;
             }else{
                 this.xinxi = data.data;
+                console.log(this.xinxi);
             }    
         });
         },
         dizhi(index){
-             this.quan.push(this.xinxi[index].name,this.xinxi[index].address);
+             this.quan.push(this.xinxi[index].name,this.xinxi[index].address,this.xinxi[index].latitude,this.xinxi[index].longitude);
              if(this.csxx.join().indexOf(this.quan) == -1){
                  this.csxx.unshift(this.quan);
              }            
              this.$store.commit("dizhicz", this.csxx);
              this.$store.commit("dizhipd", this.value1);
              this.$router.push({path:"/first"});
+             console.log(this.csxx);
         },
         dizhi2(index){
              this.$router.push({path:"/first"});
              this.$store.commit("dizhipd", !this.value1);
              this.$store.commit("dizhiin", index);
-             console.log(this.$store.state.index);
+             console.log(this.xinxi);
         },
         tingzhi() {
             this.down = false;
