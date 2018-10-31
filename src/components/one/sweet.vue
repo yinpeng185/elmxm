@@ -126,16 +126,24 @@ let loadingInstance = Loading.service({
         this.id = this.$route.query.id;
         this.old = this.$route.query.id;
 
+
 if(this.$store.state.dz == undefined){
     this.latitude = 31.22967;
     this.longitude = 121.4762;
+    
+}else{
+    if(this.$store.state.index == undefined){
+    this.index = 0;
 }else{
     this.index = this.$store.state.index;
+}
        console.log(this.index);
       this.latitude = this.$store.state.dz[this.index][2];
       this.longitude = this.$store.state.dz[this.index][3];
       console.log(this.latitude,this.longitude);
+
 }
+    
 
 if(this.indexx == undefined){
     this.indexx = "";

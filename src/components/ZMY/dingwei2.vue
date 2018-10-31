@@ -101,7 +101,7 @@ export default {
              this.$router.push({path:"/first"});
              this.$store.commit("dizhipd", !this.value1);
              this.$store.commit("dizhiin", index);
-             console.log(this.xinxi);
+            //  console.log(this.xinxi);
         },
         tingzhi() {
             this.down = false;
