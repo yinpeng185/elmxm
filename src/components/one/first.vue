@@ -122,7 +122,7 @@ let First = {
 
 //导出模块:组件必须是default
 export default {
-  First,
+  name:"first",
   components: {
     swiper,
     swiperSlide,
