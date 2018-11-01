@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 import Vuex from 'vuex'
-
+import Buycar from '../components/one/buycar'
 import Foot from '../components/one/foot'
 import First from '../components/one/first'
 //@:直接找到src根目录
@@ -40,6 +40,7 @@ import History3 from '../page/benefit/children/history3'
 Vue.use(Router)
 Vue.use(Vuex)
 
+
 export default new Router({
   routes: [
     {
@@ -50,6 +51,10 @@ export default new Router({
     {
       path: '/foot',    //底部共用组件
       component: Foot,
+    },
+    {
+      path: '/bc',    //购物车共用组件
+      component: Buycar,
     },
     {
       path: '/first',      //外卖界面
@@ -157,6 +162,7 @@ export default new Router({
       path: '/dingwei2/:id',
       name: 'dingwei2',
       component: Dingwei2
-    }   
+    }
+
   ]  
 })
