@@ -36,7 +36,7 @@
   </div>
   
 <div class="w1" v-if="show1">
-             <div class="w2">
+             <div id="w2" class="w2">
                <ul>
                  <li @click="xuanze(index)" class="ww" v-for="(k,index) in datass" :key="index" :class="{ red:changeRed == index}">{{k.name}}</li>
                </ul>
@@ -46,7 +46,7 @@
                
                <div v-for="(k,index) in datass" :key="index" > 
                <div style="background:lightgray;width:100%;height:0.5rem;line-height:0.5rem;">
-               <span style="font-size:0.2rem;font-weight:bold;">{{k.name}}</span>
+               <span ref="tout" class="sp" style="font-size:0.2rem;font-weight:bold;">{{k.name}}</span>
                <span style="font-size:0.15rem;color:gray;padding-top:0.5rem;" v-if="k.description">{{k.description}}</span> 
               </div>
 
@@ -226,7 +226,16 @@ export default {
   },
   xuanze(index){
       this.changeRed = index;
+      console.log(this.$refs.tout[index].offsetTop);
+      // this.$refs.tout[index].offsetTop  需在标签中绑定ref="tout"属性,此处才能获取
+      // 点击后跳转到指定位置,不写单位
+      // document.documentElement.scrollTop=0;
+      // 点击后跳转到指定元素,好像只能用id
+      // document.getElementById("ID").scrollIntoView();
+      document.documentElement.scrollTop=this.$refs.tout[index].offsetTop-162;
+      
   }
+
 }
 }
 </script>

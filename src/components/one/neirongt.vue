@@ -46,7 +46,7 @@
                
                <div v-for="(k,index) in datass" :key="index" > 
                <div style="background:lightgray;width:100%;height:0.5rem;line-height:0.5rem;">
-               <span style="font-size:0.2rem;font-weight:bold;">{{k.name}}</span>
+               <span ref="tout" style="font-size:0.2rem;font-weight:bold;">{{k.name}}</span>
                <span style="font-size:0.15rem;color:gray;padding-top:0.5rem;" v-if="k.description">{{k.description}}</span> 
               </div>
 
@@ -230,6 +230,7 @@ export default {
   },
   xuanze(index){
       this.changeRed = index;
+      document.documentElement.scrollTop = this.$refs.tout[index].offsetTop-162;
   }
 }
 }
