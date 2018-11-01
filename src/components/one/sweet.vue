@@ -137,10 +137,10 @@ if(this.$store.state.dz == undefined){
 }else{
     this.index = this.$store.state.index;
 }
-       console.log(this.index);
+    //    console.log(this.index);
       this.latitude = this.$store.state.dz[this.index][2];
       this.longitude = this.$store.state.dz[this.index][3];
-      console.log(this.latitude,this.longitude);
+    //   console.log(this.latitude,this.longitude);
 
 }
     
@@ -165,9 +165,9 @@ if(this.indexx == undefined){
     //promise写法
     this.$http.get(api).then(data => {
          //成功后的回调
-        console.log('成功了---');
+        // console.log('成功了---');
         //展示所有商店
-        console.log(data.data);
+        // console.log(data.data);
       this.arr = data.data;
     });
     let apii = "https://elm.cangdu.org/shopping/v1/restaurants/delivery_modes";

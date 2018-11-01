@@ -209,7 +209,7 @@ export default {
       this.index = this.$store.state.index;
     }
           
-    console.log(this.csxx);
+    // console.log(this.csxx);
       let loadingInstance = Loading.service({
         fullscreen:true
       });
