@@ -5,6 +5,9 @@ import Vuex from 'vuex'
 import Buycar from '../components/one/buycar'
 import Foot from '../components/one/foot'
 import First from '../components/one/first'
+
+// import Buycar from '../components/one/buycar'
+
 //@:直接找到src根目录
 //@:直接找到src根目录
 import Sweet from '@/components/one/sweet'
