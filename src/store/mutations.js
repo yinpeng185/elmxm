@@ -20,14 +20,28 @@ export default{
       this.state.arr=n;
     },
     add(state,id){
-      this.state.arr.filter(num => id == num.foods[0].specfoods[0].food_id)[0].foods[0].specfoods[0].count++
-      this.state.newshop = this.state.arr.filter(num => num.foods[0].specfoods[0].count != 0)
+      this.state.arr.filter(num => id.a == num.id)[0].foods.filter(num => id.b == num.specfoods[0].food_id)[0].specfoods[0].count++
+      if (state.ss.indexOf(id.c) == -1) {
+        // 查找添加li食物信息
+        this.state.ss.push(id.c)
+    }
+    var sumValue = 0;
+    for (let i = 0; i < this.state.ss.length; i++) {
+        sumValue += this.state.ss[i].price * this.state.ss[i].count;
+    }
+    this.state.price = sumValue
+
+
 
     },
     app(state,id){
-      this.state.arr.filter(num => id == num.foods[0].specfoods[0].food_id)[0].foods[0].specfoods[0].count--
-      this.state.newshop = this.state.arr.filter(num => num.foods[0].specfoods[0].count != 0)
+      this.state.ss.filter(num => id == num.food_id)[0].count--
 
+      var sumValue = 0;
+      for (let i = 0; i < this.state.ss.length; i++) {
+          sumValue += this.state.ss[i].price * this.state.ss[i].count;
+      }
+      this.state.price = sumValue
     }
        
   }

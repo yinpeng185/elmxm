@@ -10,7 +10,9 @@
                        <span>黄焖鸡</span> 
                        <span class="listr">
                        <span class="money">$20</span>
-                       <i class="el-icon-remove-outline"></i> 2 <i class="el-icon-circle-plus"></i>
+                       <i class="el-icon-remove-outline"></i> 
+                       2
+                        <i class="el-icon-circle-plus"></i>
                        </span>
                    </li>
                </ul>
@@ -21,7 +23,7 @@
                <img src="../img/buy.png" alt="">
            </div>
            <div>
-               <p class="pay1">$40.00</p>
+               <p class="pay1">${{$store.state.price}}</p>
                <p class="pay2">配送费￥5</p>
            </div>
            <div>
@@ -37,15 +39,20 @@
 export default {
    data(){
     return{
+      sssss:[],
       buy:false,
     }
-  },methods:{
+  },
+  methods:{
     xx(){
      this.buy = !this.buy;
     }, 
     xxx(){
     this.buy =false
     }, 
+  },
+  created(){
+      this.sssss = this.$store.state.ss;
   }
 }
 </script>
