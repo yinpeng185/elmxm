@@ -11,8 +11,8 @@ export default  {
     dataa: [],
   }),
 
-  
+
   arr:null,
   ss:[],
-  price:""
+  price:"0"
   }
