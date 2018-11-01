@@ -23,6 +23,7 @@
         <p v-if="show4" class="q3" @click="change2()">评价</p>
         <p v-else="" class="q3" @click="change2()" style="color:blue;border-bottom:0.03rem solid blue">评价</p>
       </div>
+<<<<<<< HEAD
     </div>
     <div class="w1" v-if="show1">
       <div class="w2">
@@ -39,6 +40,70 @@
           <ul>
             <li class="t1" v-for="(da,index) in k.foods" :key="index">
               <div style="display:flex; justify-content: space-around;">
+=======
+      
+  </div>
+  
+<div class="w1" v-if="show1">
+             <div ref="top" id="w2" class="w2">
+               <ul>
+                 <li @click="xuanze(index)" class="ww" v-for="(k,index) in datass" :key="index" :class="{ red:changeRed == index}">{{k.name}}</li>
+               </ul>
+             </div>
+
+             <div class="w3">
+               
+               <div v-for="(k,index) in datass" :key="index" > 
+               <div style="background:lightgray;width:100%;height:0.5rem;line-height:0.5rem;">
+               <span ref="tout" class="sp" style="font-size:0.2rem;font-weight:bold;">{{k.name}}</span>
+               <span style="font-size:0.15rem;color:gray;padding-top:0.5rem;" v-if="k.description">{{k.description}}</span> 
+              </div>
+
+               <ul>
+                 <li class="t1" v-for="(da,index) in k.foods" :key="index">
+                   <div style="display:flex; justify-content: space-around;">
+                     <div>
+                    <img class="img3" style="width:0.5rem;margin-left:0.1rem;margin-top:0.1rem;" :src="'https://elm.cangdu.org/img/'+da.image_path" alt="">
+                    </div>
+                    <div style="padding-top:0.1rem;width:1rem;">
+                    <span class="z1">{{da.name}}</span>
+                    <p class="z2">{{da.description}}</p>
+                    <span class="z3"> 月售{{da.month_sales}}份 好评率{{da.satisfy_rate}}%</span>
+                    <br>
+                    <span class="z4">{{da.description}}</span>
+                    <p style="color:red;font-size:0.13rem;" class="z5">￥{{da.specfoods[0].price}}<span style="color:gray;font-size:0.12rem;">起</span>                   
+                    </p>
+                    
+                    
+                    </div>
+                    <div style="padding-top:0.8rem">
+                      <i @click="count--" class="el-icon-remove"></i>{{count}}
+                      <i @click="count++" class="el-icon-circle-plus"></i>
+                    </div>
+                    </div>
+                 </li>
+               </ul>
+            </div> 
+               
+               
+             </div>
+</div>
+
+<div class="e1" v-if="show2">
+         <div class="ee">
+             <div class="e2">
+                   <p class="h1">4.4</p>
+                   <span class="h2">综合评价</span>
+                   <p class="h3">高于周边商家76.9%</p>
+             </div>
+             <div class="e3">
+                 <div>
+                    <span class="h4">服务态度  </span>
+                     <el-rate class="o1" v-model="value5" disabled show-score text-color="#ff9900" score-template="{value}">
+                    </el-rate>
+                   
+                </div>
+>>>>>>> 2ab6674191f4eb626e39db4ca11a5ac38bef6d01
                 <div>
                   <img class="img3" style="width:0.5rem;margin-left:0.1rem;margin-top:0.1rem;" :src="'https://elm.cangdu.org/img/'+da.image_path" alt="">
                 </div>
@@ -206,7 +271,16 @@ export default {
   },
   xuanze(index){
       this.changeRed = index;
+      console.log(this.$refs.tout[index].offsetTop);
+      // this.$refs.tout[index].offsetTop  需在标签中绑定ref="tout"属性,此处才能获取
+      // 点击后跳转到指定位置,不写单位
+      // document.documentElement.scrollTop=0;
+      // 点击后跳转到指定元素,好像只能用id
+      // document.getElementById("ID").scrollIntoView();
+      document.documentElement.scrollTop = this.$refs.tout[index].offsetTop-this.$refs.top.offsetTop;
+      
   }
+
 }
 }
 </script>
@@ -287,6 +361,8 @@ export default {
     }
     .w1{
       width:100%;
+      display: flex;
+      justify-content: space-around;
       overflow: hidden;
       padding-top: 1.5rem;
     }

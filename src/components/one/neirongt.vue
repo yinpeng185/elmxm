@@ -36,7 +36,7 @@
   </div>
   
 <div class="w1" v-if="show1">
-             <div class="w2">
+             <div ref="top" class="w2">
                <ul>
                  <li @click="xuanze(index)" class="ww" v-for="(k,index) in datass" :key="index" :class="{ red:changeRed == index}">{{k.name}}</li>
                </ul>
@@ -46,7 +46,7 @@
                
                <div v-for="(k,index) in datass" :key="index" > 
                <div style="background:lightgray;width:100%;height:0.5rem;line-height:0.5rem;">
-               <span style="font-size:0.2rem;font-weight:bold;">{{k.name}}</span>
+               <span ref="tout" style="font-size:0.2rem;font-weight:bold;">{{k.name}}</span>
                <span style="font-size:0.15rem;color:gray;padding-top:0.5rem;" v-if="k.description">{{k.description}}</span> 
               </div>
 
@@ -237,6 +237,7 @@ export default {
   },
   xuanze(index){
       this.changeRed = index;
+      document.documentElement.scrollTop = this.$refs.tout[index].offsetTop-this.$refs.top.offsetTop;
   }
 }
 }
@@ -319,8 +320,13 @@ export default {
     .w1{
       width:100%;
       overflow: hidden;
+<<<<<<< HEAD
       padding-top: 1.5rem;      
       padding-bottom:1rem;
+=======
+      padding-top: 1.5rem;
+      overflow: hidden;
+>>>>>>> 2ab6674191f4eb626e39db4ca11a5ac38bef6d01
     }
     .w2{
       width:27%;

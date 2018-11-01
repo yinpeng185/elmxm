@@ -15,7 +15,7 @@
             </div>
         </div>
         <div class="deta-two">
-            <router-link tag="p" :to="{name:'',params:{}}">食品监督安全公示 <span>企业认证详情 &gt;</span></router-link>
+            <router-link tag="p" :to="{name:'makesure',params:{}}">食品监督安全公示 <span>企业认证详情 &gt;</span></router-link>
             <div class="deta-img">
             <div><img src="../../images/fenxiang.png" alt=""></div>
             <div class="deta-p"><p>监督检查结果: <span>良好</span></p>
