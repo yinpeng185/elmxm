@@ -226,7 +226,7 @@ export default {
   methods: {
     add(id) {
       this.$store.commit("add", id);
-      console.log(id);
+      console.log(id);    
     },
     app(id) {
       this.$store.commit("app", id);
