@@ -320,13 +320,9 @@ export default {
     .w1{
       width:100%;
       overflow: hidden;
-<<<<<<< HEAD
       padding-top: 1.5rem;      
       padding-bottom:1rem;
-=======
-      padding-top: 1.5rem;
       overflow: hidden;
->>>>>>> 2ab6674191f4eb626e39db4ca11a5ac38bef6d01
     }
     .w2{
       width:27%;

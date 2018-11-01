@@ -23,24 +23,6 @@
         <p v-if="show4" class="q3" @click="change2()">评价</p>
         <p v-else="" class="q3" @click="change2()" style="color:blue;border-bottom:0.03rem solid blue">评价</p>
       </div>
-<<<<<<< HEAD
-    </div>
-    <div class="w1" v-if="show1">
-      <div class="w2">
-        <ul>
-           <li @click="xuanze(index)" class="ww" v-for="(k,index) in datass" :key="index" :class="{ red:changeRed == index}">{{k.name}}</li>
-        </ul>
-      </div>
-      <div class="w3">
-        <div v-for="(k,index) in datass" :key="index" > 
-          <div style="background:lightgray;width:100%;height:0.5rem;line-height:0.5rem;">
-            <span style="font-size:0.2rem;font-weight:bold;">{{k.name}}</span>
-            <span style="font-size:0.15rem;color:gray;padding-top:0.5rem;" v-if="k.description">{{k.description}}</span> 
-          </div>      
-          <ul>
-            <li class="t1" v-for="(da,index) in k.foods" :key="index">
-              <div style="display:flex; justify-content: space-around;">
-=======
       
   </div>
   
@@ -103,7 +85,6 @@
                     </el-rate>
                    
                 </div>
->>>>>>> 2ab6674191f4eb626e39db4ca11a5ac38bef6d01
                 <div>
                   <img class="img3" style="width:0.5rem;margin-left:0.1rem;margin-top:0.1rem;" :src="'https://elm.cangdu.org/img/'+da.image_path" alt="">
                 </div>
@@ -130,59 +111,7 @@
     
     </div>
 
-    <div class="e1" v-if="show2">
-        <div class="ee">
-          <div class="e2">
-            <p class="h1">4.4</p>
-            <span class="h2">综合评价</span>
-            <p class="h3">高于周边商家76.9%</p>
-          </div>
-          <div class="e3">
-            <div>
-              <span class="h4">服务态度  </span>
-              <el-rate class="o1" v-model="value5" disabled show-score text-color="#ff9900" score-template="{value}"></el-rate>
-            </div>
-            <div>
-              <span class="h4">菜品评价</span>
-              <el-rate class="o1" v-model="value5" disabled show-score text-color="#ff9900" score-template="{value}"></el-rate>
-            </div>
-          <div>
-            <p class="h4">送达时间<span class="h5">分钟</span></p>
-          </div>            
-        </div>
-      </div>
-      <div>       
-        <ul class="f1">
-         <li class="f2" v-for="(daa,index) in agree" :key="index" @click="menu1(index)" :class="{active:index==facevalue}"><span :class="{active:index==facevalue}">{{daa.name}}({{daa.count}})</span></li>
-        </ul>
-      </div>
-      <div class="gg">
-        <div class="g1">           
-          <ul class="g2" v-for="(daaa,index) in onee" :key="index">
-            <li class="g3" >
-              <div style="display:flex;justify-content: space-between;">
-                <span>{{daaa.username}}</span>
-                <span>{{daaa.rated_at}}</span>
-              </div>
-              <div style="display:flex;">
-               <span class="span">
-                <el-rate v-model="daaa.rating_star" disabled show-score text-color="#ff9900" score-template="{value}" class="el-rate"></el-rate>
-               </span>
-               <span>{{daaa.time_spent_desc}}</span>
-              </div>
-              <ul style="display:flex;flex-direction:row;">
-                <li v-for="(da,index) in daaa.item_ratings" :key="index"> 
-                  <img style="width:0.8rem;margin-left:0.1rem;margin-top:0.1rem;":src="'https://fuss10.elemecdn.com/'+da.image_hash+'.jpeg'" alt="">
-                  <p>{{da.food_name}}</p>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-    </div>
-
+   
      
 
 
