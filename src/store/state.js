@@ -9,7 +9,10 @@ export default  {
     ssls: ["历史记录"],
     index: "",
     dataa: [],
-    arr:"",
-    newshop:""
   }),
+
+
+  arr:null,
+  ss:[],
+  price:"0"
   }

@@ -51,7 +51,7 @@
               </div>
 
                <ul>
-                 <li class="t1" v-for="(da,index) in k.foods" :key="index">
+                 <li class="t1" v-for="(da,index1) in k.foods" :key="index1">
                    <div style="display:flex; justify-content: space-around;">
                        <div>
                           <img class="img3" style="width:0.5rem;margin-left:0.1rem;margin-top:0.1rem;" :src="'https://elm.cangdu.org/img/'+da.image_path" alt="">
@@ -66,11 +66,17 @@
                             <span style="color:gray;font-size:0.12rem;">起</span>                   
                          </p>
                        </div>
-                       <div style="padding-top:0.8rem">
+                       <div style="padding-top:0.8rem" >
+
                          <i @click="app(da.specfoods[0].food_id)" class="el-icon-remove"></i>
                             {{da.specfoods[0].count}}
-                         <i @click="add(da.specfoods[0].food_id)" class="el-icon-circle-plus"></i>
+                         <i @click="add(k.id,da.specfoods[0].food_id,da.specfoods[0])" class="el-icon-circle-plus"></i>
                        </div>
+                       <!-- <div style="padding-top:0.8rem">
+                         <i @click="app($event)" class="el-icon-remove"></i>
+                          <span>{{0}}</span>
+                         <i @click="add($event)" class="el-icon-circle-plus"></i>
+                       </div> -->
                    </div>
                  </li>
                </ul>
@@ -204,6 +210,7 @@ export default {
       for (let i = 0; i < data.data.length; i++) {
         for (let ii = 0; ii < data.data[i].foods.length; ii++) {
           Vue.set(data.data[i].foods[ii].specfoods[0], "count", 0);
+          // console.log(i,ii)
         }
       }
       this.datass = data.data;
@@ -224,14 +231,25 @@ export default {
     });
   },
   methods: {
-    add(id) {
-      this.$store.commit("add", id);
-      console.log(id);    
+    add(aid, bid, cid) {
+      this.$store.commit("add", { a: aid, b: bid, c: cid });
+      console.log(this.$store.state.price);
+      console.log(this.$store.state.ss);
+
+
     },
     app(id) {
       this.$store.commit("app", id);
-      console.log(id);
     },
+    // add(ev) {
+    //   // this.$store.commit("add", id);
+    //   console.log(ev.target.text());
+    // },
+    // app(ev) {
+    //   // this.$store.commit("app", id);
+    //   console.log(ev.target);
+    // },
+
     change1() {
       this.show1 = true;
       this.show2 = false;
@@ -253,7 +271,7 @@ export default {
     xuanze(index) {
       this.changeRed = index;
       document.documentElement.scrollTop =
-      this.$refs.tout[index].offsetTop - this.$refs.top.offsetTop;
+        this.$refs.tout[index].offsetTop - this.$refs.top.offsetTop;
     }
   }
 };

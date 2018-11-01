@@ -1,16 +1,18 @@
 <template>
-   <div class="buycar">
+   <div class="buycar" >
        <div v-if="buy" class="top">
            <div class="top1">
                <span>购物车</span>
                <span @click="xxx" class="span1"><img src="../../images/bindphone.png" alt="">清空</span></div>
            <div class="list">
-               <ul>
+               <ul v-for="(item,index) in ss" :key="index">
                    <li>
-                       <span>黄焖鸡</span> 
+                       <span>{{item.name}}</span> 
                        <span class="listr">
-                       <span class="money">$20</span>
-                       <i class="el-icon-remove-outline"></i> 2 <i class="el-icon-circle-plus"></i>
+                       <span class="money">${{item.price}}</span>
+                       <i class="el-icon-remove-outline"></i> 
+                       1
+                       <i class="el-icon-circle-plus"></i>
                        </span>
                    </li>
                </ul>
@@ -21,7 +23,7 @@
                <img src="../img/buy.png" alt="">
            </div>
            <div>
-               <p class="pay1">$40.00</p>
+               <p class="pay1">${{$store.state.price}}.00</p>
                <p class="pay2">配送费￥5</p>
            </div>
            <div>
@@ -37,15 +39,23 @@
 export default {
    data(){
     return{
+   
       buy:false,
     }
-  },methods:{
+  },
+  methods:{
     xx(){
      this.buy = !this.buy;
     }, 
     xxx(){
     this.buy =false
     }, 
+  },
+  computed:{
+      ss(){
+          return this.$store.state.ss;
+      }
+      
   }
 }
 </script>
