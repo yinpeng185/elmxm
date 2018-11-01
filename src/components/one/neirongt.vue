@@ -38,7 +38,7 @@
 <div class="w1" v-if="show1">
              <div class="w2">
                <ul>
-                 <li class="ww" v-for="(k,index) in datass" :key="index">{{k.name}}</li>
+                 <li @click="xuanze(index)" class="ww" v-for="(k,index) in datass" :key="index" :class="{ red:changeRed == index}">{{k.name}}</li>
                </ul>
              </div>
 
@@ -151,6 +151,7 @@
 </template>
 
 <script>
+import { Loading } from "element-ui";
 export default {
     name:"neirongt",
     data: () => ({
@@ -168,21 +169,22 @@ export default {
     show1:true,
     show2:false,
     show3:false,
-    show4:true
+    show4:true,
+    changeRed:0
   }),
    created() {
        this.idd = this.$route.query.id;
        console.log(this.idd);
        this.id = this.$route.params.id;
-    //    let loadingInstance = Loading.service({
-    //     fullscreen:true
-    //   });
+       let loadingInstance = Loading.service({
+        fullscreen:true
+      });
    
     let api =
       "https://elm.cangdu.org/shopping/restaurant/"+this.id;
 
     this.$http.get(api).then(data => {      
-        // loadingInstance.close();
+        loadingInstance.close();
       this.data = data.data;
       this.datas = data.data.piecewise_agent_fee;
       // console.log(this.id);
@@ -225,6 +227,9 @@ export default {
   },
        menu1(id) {      
       this.facevalue = id;
+  },
+  xuanze(index){
+      this.changeRed = index;
   }
 }
 }
@@ -306,13 +311,15 @@ export default {
     }
     .w1{
       width:100%;
-      display: flex;
-      justify-content: space-around;
+      overflow: hidden;
       padding-top: 1.5rem;
     }
     .w2{
       width:27%;
       border: 1px solid lightgray;
+      position: fixed;
+      top: 1.63rem;
+      left: 0;
     }
     .ww{
       border: 1px solid lightgray;
@@ -321,6 +328,10 @@ export default {
     }
     .w3{
       width:75%;
+      margin-left: 27%;
+      /* 超出滚动,x轴隐藏滚动条,y轴显示 */
+      /* overflow-x: hidden;
+      overflow-y: scroll;  */
     }
     .e1{
       padding-top: 1.5rem;
@@ -416,6 +427,11 @@ export default {
     }
     .h5{
       font-size: 0.12rem;
+    }
+
+    .red{
+      color: red;
+      border-left: 5px solid blue;
     }
    
 
