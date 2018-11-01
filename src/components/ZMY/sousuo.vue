@@ -10,8 +10,9 @@
        </div>
        <div class="d1" v-if="value1">
           <ul>
-               <li @click="lishi(index)" v-for="(jl, index) in arr" :key="index">{{jl}}</li>
-               <li @click="tingzhi()">清楚历史记录</li>
+              <p>历史记录</p>
+              <li @click="lishi(index)" v-for="(jl, index) in arr" :key="index">{{jl}}</li>
+              <li @click="tingzhi()">清楚历史记录</li>
           </ul>
        </div>
        <div class="d2" v-if="value2">
@@ -37,7 +38,7 @@ export default {
   },
   created(){
       if(this.$store.state.ssls == undefined){
-          this.arr = ["历史记录"];
+          this.arr = [];
       }else{
           this.arr = this.$store.state.ssls;
       }      
@@ -51,7 +52,7 @@ export default {
   },
   methods:{
       ip(){  
-          if(this.txt == "" &&  this.arr.length >= 2){
+          if(this.txt == "" &&  this.arr.length >= 1){
               this.value1 = true;
               this.value2 = false;
           }
@@ -66,7 +67,7 @@ export default {
       },
       tingzhi(arr) {
           this.value1 = false;
-          this.arr = ["历史记录"];
+          this.arr = [];
           this.$store.commit("sousuols", this.arr);
       },
       lishi(index){
@@ -136,7 +137,7 @@ export default {
         padding: 0 5%;
     }
     .d1 p{
-        font-size: 0.24px;
+        font-size: 0.24rem;
         margin: 0.1rem 0;
         font-weight: bold;
     }
