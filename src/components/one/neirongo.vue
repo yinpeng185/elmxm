@@ -74,10 +74,10 @@
                     </div>
                  </li>
                </ul>
-            </div> 
-               
-               
+            </div>  
              </div>
+             
+
 </div>
 
 <div class="e1" v-if="show2">
