@@ -305,6 +305,7 @@ export default {
       width:100%;
       display: flex;
       justify-content: space-around;
+      overflow: hidden;
       padding-top: 1.5rem;
     }
     .w2{

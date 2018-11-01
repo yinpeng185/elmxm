@@ -12,6 +12,7 @@ import Xiangqing from '@/components/one/xiangqing'
 import Eat from '@/components/one/eat'
 import Neirongo from '@/components/one/neirongo'
 import Neirongt from '@/components/one/neirongt'
+import Makesure from '@/components/one/makesure'
 import MY from '../components/MY/MY'
 import Msite from '../page/msite/msite'
 import Download from '../page/download/download'
@@ -75,7 +76,11 @@ export default new Router({
       path: '/xiangqing/:id',       //商家详情
       name:"xiangqing",
       component: Xiangqing,
-    }, {
+    },{
+      path: '/makesure',       //商家详情
+      name:"makesure",
+      component: Makesure,
+    },{
       path: '/my',      //我的界面
       name: 'my',     
       component: MY
