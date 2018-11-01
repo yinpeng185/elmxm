@@ -67,10 +67,10 @@
                     
                     
                     </div>
-                    <div style="padding-top:0.8rem">
-                      <i @click="count--" class="el-icon-remove"></i>{{count}}
-                      <i @click="count++" class="el-icon-circle-plus"></i>
-                    </div>
+                      <div style="padding-top:0.8rem">
+                  <i @click="app(da.specfoods[0].food_id)" class="el-icon-remove"></i>{{da.specfoods[0].count}}
+                  <i @click="add(da.specfoods[0].food_id)" class="el-icon-circle-plus"></i>
+                </div>
                     </div>
                  </li>
                </ul>
@@ -152,6 +152,8 @@
 </template>
 
 <script>
+import Vue from "vue";
+
 import { Loading } from "element-ui";
 import buycar from '../one/buycar'
 
@@ -198,11 +200,17 @@ export default {
       // console.log(this.data);
     });
     
-    let apc =
+   let apc =
       "https://elm.cangdu.org/shopping/v2/menu?restaurant_id="+this.id;
     this.$http.get(apc).then(data => {      
-        
+        for(let i=0;i< data.data.length;i++){
+          for(let ii=0;ii< data.data[i].foods.length;ii++){
+        Vue.set(data.data[i].foods[ii].specfoods[0],"count",0);
+        }
+        }
       this.datass = data.data;
+      this.$store.commit("ss",data.data)
+      console.log(this.arr);
     });
  
     let apc1 =
@@ -218,6 +226,14 @@ export default {
     });
   },
    methods:{
+     
+     add(id){
+       this.$store.commit("add",id);
+       console.log(id)
+     },app(id){
+       this.$store.commit("app",id);
+       console.log(id)
+     },
         change1(){
         this.show1 = true;
         this.show2 = false;

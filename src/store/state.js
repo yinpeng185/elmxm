@@ -8,6 +8,8 @@ export default  {
     lujing: "/my",
     ssls: ["历史记录"],
     index: "",
-    dataa: []
+    dataa: [],
+    arr:"",
+    newshop:""
   }),
   }

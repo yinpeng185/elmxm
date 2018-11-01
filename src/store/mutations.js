@@ -15,5 +15,19 @@ export default{
     },
     sousuols(store, arr){
       this.state.ssls = arr;
+    },
+    ss(state,n){
+      this.state.arr=n;
+    },
+    add(state,id){
+      this.state.arr.filter(num => id == num.foods[0].specfoods[0].food_id)[0].foods[0].specfoods[0].count++
+      this.state.newshop = this.state.arr.filter(num => num.foods[0].specfoods[0].count != 0)
+
+    },
+    app(state,id){
+      this.state.arr.filter(num => id == num.foods[0].specfoods[0].food_id)[0].foods[0].specfoods[0].count--
+      this.state.newshop = this.state.arr.filter(num => num.foods[0].specfoods[0].count != 0)
+
     }
+       
   }
