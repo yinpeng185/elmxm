@@ -36,7 +36,7 @@
   </div>
   
 <div class="w1" v-if="show1">
-             <div id="w2" class="w2">
+             <div ref="top" id="w2" class="w2">
                <ul>
                  <li @click="xuanze(index)" class="ww" v-for="(k,index) in datass" :key="index" :class="{ red:changeRed == index}">{{k.name}}</li>
                </ul>
@@ -232,7 +232,7 @@ export default {
       // document.documentElement.scrollTop=0;
       // 点击后跳转到指定元素,好像只能用id
       // document.getElementById("ID").scrollIntoView();
-      document.documentElement.scrollTop=this.$refs.tout[index].offsetTop-162;
+      document.documentElement.scrollTop = this.$refs.tout[index].offsetTop-this.$refs.top.offsetTop;
       
   }
 

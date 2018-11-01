@@ -30,7 +30,7 @@
        </div>
      <div class="two">
      <router-link to="/my/benefit">        
-       <span  class="ge">0</span>
+       <span  class="ge">3</span>
        <span>个</span>
        <p>我的优惠</p>
        </router-link>

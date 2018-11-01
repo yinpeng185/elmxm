@@ -36,7 +36,7 @@
   </div>
   
 <div class="w1" v-if="show1">
-             <div class="w2">
+             <div ref="top" class="w2">
                <ul>
                  <li @click="xuanze(index)" class="ww" v-for="(k,index) in datass" :key="index" :class="{ red:changeRed == index}">{{k.name}}</li>
                </ul>
@@ -230,7 +230,7 @@ export default {
   },
   xuanze(index){
       this.changeRed = index;
-      document.documentElement.scrollTop = this.$refs.tout[index].offsetTop-162;
+      document.documentElement.scrollTop = this.$refs.tout[index].offsetTop-this.$refs.top.offsetTop;
   }
 }
 }
