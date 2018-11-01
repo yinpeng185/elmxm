@@ -78,6 +78,7 @@
                
                
              </div>
+                 <buycar></buycar>
 </div>
 
 <div class="e1" v-if="show2">
@@ -152,7 +153,13 @@
 
 <script>
 import { Loading } from "element-ui";
+import buycar from '../one/buycar'
+
+
 export default {
+    components:{
+        buycar,
+ },
     name:"neirongt",
     data: () => ({
     data: [],
@@ -312,7 +319,8 @@ export default {
     .w1{
       width:100%;
       overflow: hidden;
-      padding-top: 1.5rem;
+      padding-top: 1.5rem;      
+      padding-bottom:1rem;
     }
     .w2{
       width:27%;
@@ -329,6 +337,7 @@ export default {
     .w3{
       width:75%;
       margin-left: 27%;
+       padding-bottom:1rem;
       /* 超出滚动,x轴隐藏滚动条,y轴显示 */
       /* overflow-x: hidden;
       overflow-y: scroll;  */

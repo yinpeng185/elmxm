@@ -1,148 +1,122 @@
 <template>
-    <div>
-
-     <div class="big">
-       
-   <div class="top">
-<div class="all" :style="{ 'background-image': 'url(https://elm.cangdu.org/img/' + data.image_path + ')','background-repeat':'no-repeat','background-size':'cover', }">
-             <router-link to="/first"> 
-           <i style="color:white" class="el-icon-arrow-left"></i>
-      
-
-            <img class="img2" style="width:0.7rem" :src="'https://elm.cangdu.org/img/'+data.image_path" alt=""> 
-            <p class="a3">{{data.name}}</p>
-</router-link>
-
-            
-            <router-link :to='"/xiangqing/"+this.id'> 
+  <div>
+    <div class="big">
+      <div class="top">
+        <div class="all" :style="{ 'background-image': 'url(https://elm.cangdu.org/img/' + data.image_path + ')','background-repeat':'no-repeat','background-size':'cover', }">
+          <router-link to="/first">
+            <i style="color:white" class="el-icon-arrow-left"></i>
+              <img class="img2" style="width:0.7rem" :src="'https://elm.cangdu.org/img/'+data.image_path" alt=""> 
+              <p class="a3">{{data.name}}</p>
+          </router-link>
+          <router-link :to='"/xiangqing/"+this.id'> 
             <div class="a1">
-            
-            <span class="a2">商家配送 / 分钟送达 / {{datas.tips}}</span>
-            <p class="a2">公告:{{data.promotion_info}}</p>        
-           <i style="color:white" class="el-icon-arrow-right"></i> 
+              <span class="a2">商家配送 / 分钟送达 / {{datas.tips}}</span>
+              <p class="a2">公告:{{data.promotion_info}}</p>        
+              <i style="color:white" class="el-icon-arrow-right"></i> 
             </div>
-            </router-link>
-     </div> 
-     </div>
-    
-
+          </router-link>
+        </div> 
+      </div>
       <div class="q1">
-          <p v-if="show3" class="q2" @click="change1()">商品</p>
-          <p v-else="" class="q2" @click="change1()" style="color:blue;border-bottom:0.03rem solid blue">商品</p>
-          <p v-if="show4" class="q3" @click="change2()">评价</p>
-          <p v-else="" class="q3" @click="change2()" style="color:blue;border-bottom:0.03rem solid blue">评价</p>
+        <p v-if="show3" class="q2" @click="change1()">商品</p>
+        <p v-else="" class="q2" @click="change1()" style="color:blue;border-bottom:0.03rem solid blue">商品</p>
+        <p v-if="show4" class="q3" @click="change2()">评价</p>
+        <p v-else="" class="q3" @click="change2()" style="color:blue;border-bottom:0.03rem solid blue">评价</p>
       </div>
-      
-  </div>
-  
-<div class="w1" v-if="show1">
-             <div class="w2">
-               <ul>
-                 <li @click="xuanze(index)" class="ww" v-for="(k,index) in datass" :key="index" :class="{ red:changeRed == index}">{{k.name}}</li>
-               </ul>
-             </div>
-
-             <div class="w3">
-               
-               <div v-for="(k,index) in datass" :key="index" > 
-               <div style="background:lightgray;width:100%;height:0.5rem;line-height:0.5rem;">
-               <span style="font-size:0.2rem;font-weight:bold;">{{k.name}}</span>
-               <span style="font-size:0.15rem;color:gray;padding-top:0.5rem;" v-if="k.description">{{k.description}}</span> 
+    </div>
+    <div class="w1" v-if="show1">
+      <div class="w2">
+        <ul>
+           <li @click="xuanze(index)" class="ww" v-for="(k,index) in datass" :key="index" :class="{ red:changeRed == index}">{{k.name}}</li>
+        </ul>
+      </div>
+      <div class="w3">
+        <div v-for="(k,index) in datass" :key="index" > 
+          <div style="background:lightgray;width:100%;height:0.5rem;line-height:0.5rem;">
+            <span style="font-size:0.2rem;font-weight:bold;">{{k.name}}</span>
+            <span style="font-size:0.15rem;color:gray;padding-top:0.5rem;" v-if="k.description">{{k.description}}</span> 
+          </div>      
+          <ul>
+            <li class="t1" v-for="(da,index) in k.foods" :key="index">
+              <div style="display:flex; justify-content: space-around;">
+                <div>
+                  <img class="img3" style="width:0.5rem;margin-left:0.1rem;margin-top:0.1rem;" :src="'https://elm.cangdu.org/img/'+da.image_path" alt="">
+                </div>
+                <div style="padding-top:0.1rem;width:1rem;">
+                  <span class="z1">{{da.name}}</span>
+                  <p class="z2">{{da.description}}</p>
+                  <span class="z3"> 月售{{da.month_sales}}份 好评率{{da.satisfy_rate}}%</span>
+                  <br>
+                  <span class="z4">{{da.description}}</span>
+                  <p style="color:red;font-size:0.13rem;" class="z5">￥{{da.specfoods[0].price}}
+                    <span style="color:gray;font-size:0.12rem;">起</span>                   
+                  </p>
+                </div>
+                <div style="padding-top:0.8rem">
+                  <i @click="count--" class="el-icon-remove"></i>{{count}}
+                  <i @click="count++" class="el-icon-circle-plus"></i>
+                </div>
               </div>
+            </li>
+          </ul>
+        </div> 
+      </div>
+    <buycar></buycar>
+    
+    </div>
 
-               <ul>
-                 <li class="t1" v-for="(da,index) in k.foods" :key="index">
-                   <div style="display:flex; justify-content: space-around;">
-                     <div>
-                    <img class="img3" style="width:0.5rem;margin-left:0.1rem;margin-top:0.1rem;" :src="'https://elm.cangdu.org/img/'+da.image_path" alt="">
-                    </div>
-                    <div style="padding-top:0.1rem;width:1rem;">
-                    <span class="z1">{{da.name}}</span>
-                    <p class="z2">{{da.description}}</p>
-                    <span class="z3"> 月售{{da.month_sales}}份 好评率{{da.satisfy_rate}}%</span>
-                    <br>
-                    <span class="z4">{{da.description}}</span>
-                    <p style="color:red;font-size:0.13rem;" class="z5">￥{{da.specfoods[0].price}}<span style="color:gray;font-size:0.12rem;">起</span>                   
-                    </p>
-                    
-                    
-                    </div>
-                    <div style="padding-top:0.8rem">
-                      <i @click="count--" class="el-icon-remove"></i>{{count}}
-                      <i @click="count++" class="el-icon-circle-plus"></i>
-                    </div>
-                    </div>
-                 </li>
-               </ul>
-            </div> 
-               
-               
-             </div>
-</div>
-
-<div class="e1" v-if="show2">
-         <div class="ee">
-             <div class="e2">
-                   <p class="h1">4.4</p>
-                   <span class="h2">综合评价</span>
-                   <p class="h3">高于周边商家76.9%</p>
-             </div>
-             <div class="e3">
-                 <div>
-                    <span class="h4">服务态度  </span>
-                     <el-rate class="o1" v-model="value5" disabled show-score text-color="#ff9900" score-template="{value}">
-                    </el-rate>
-                   
-                </div>
-                <div>
-                   <span class="h4">菜品评价</span>
-                    <el-rate class="o1" v-model="value5" disabled show-score text-color="#ff9900" score-template="{value}">
-                    </el-rate>
-                    
-                </div>
-                <div>
-                    <p class="h4">送达时间<span class="h5">分钟</span></p>
-                </div>            
-             </div>
+    <div class="e1" v-if="show2">
+        <div class="ee">
+          <div class="e2">
+            <p class="h1">4.4</p>
+            <span class="h2">综合评价</span>
+            <p class="h3">高于周边商家76.9%</p>
+          </div>
+          <div class="e3">
+            <div>
+              <span class="h4">服务态度  </span>
+              <el-rate class="o1" v-model="value5" disabled show-score text-color="#ff9900" score-template="{value}"></el-rate>
+            </div>
+            <div>
+              <span class="h4">菜品评价</span>
+              <el-rate class="o1" v-model="value5" disabled show-score text-color="#ff9900" score-template="{value}"></el-rate>
+            </div>
+          <div>
+            <p class="h4">送达时间<span class="h5">分钟</span></p>
+          </div>            
+        </div>
+      </div>
+      <div>       
+        <ul class="f1">
+         <li class="f2" v-for="(daa,index) in agree" :key="index" @click="menu1(index)" :class="{active:index==facevalue}"><span :class="{active:index==facevalue}">{{daa.name}}({{daa.count}})</span></li>
+        </ul>
+      </div>
+      <div class="gg">
+        <div class="g1">           
+          <ul class="g2" v-for="(daaa,index) in onee" :key="index">
+            <li class="g3" >
+              <div style="display:flex;justify-content: space-between;">
+                <span>{{daaa.username}}</span>
+                <span>{{daaa.rated_at}}</span>
+              </div>
+              <div style="display:flex;">
+               <span class="span">
+                <el-rate v-model="daaa.rating_star" disabled show-score text-color="#ff9900" score-template="{value}" class="el-rate"></el-rate>
+               </span>
+               <span>{{daaa.time_spent_desc}}</span>
+              </div>
+              <ul style="display:flex;flex-direction:row;">
+                <li v-for="(da,index) in daaa.item_ratings" :key="index"> 
+                  <img style="width:0.8rem;margin-left:0.1rem;margin-top:0.1rem;":src="'https://fuss10.elemecdn.com/'+da.image_hash+'.jpeg'" alt="">
+                  <p>{{da.food_name}}</p>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
       </div>
 
-      <div>       
-                <ul class="f1">
-                  <li class="f2" v-for="(daa,index) in agree" :key="index" @click="menu1(index)" :class="{active:index==facevalue}"><span :class="{active:index==facevalue}">{{daa.name}}({{daa.count}})</span></li>
-                </ul>
-       
-     </div>
-     
-      <div class="gg">
-         <div class="g1">           
-                <ul class="g2" v-for="(daaa,index) in onee" :key="index">
-                  <li class="g3" >
-                    <div style="display:flex;justify-content: space-between;">
-                    <span>{{daaa.username}}</span>
-                    <span>{{daaa.rated_at}}</span>
-                    </div>
-                    <div style="display:flex;">
-                     <span class="span">
-                       <el-rate v-model="daaa.rating_star" disabled show-score text-color="#ff9900" score-template="{value}" class="el-rate">
-                    </el-rate>
-                </span>
-                <span>{{daaa.time_spent_desc}}</span>
-                </div>
- <ul style="display:flex;flex-direction:row;">
-  <li v-for="(da,index) in daaa.item_ratings" :key="index"> 
-  <img style="width:0.8rem;margin-left:0.1rem;margin-top:0.1rem;"
-                 :src="'https://fuss10.elemecdn.com/'+da.image_hash+'.jpeg'" alt="">
-                <p>{{da.food_name}}</p>
-  </li>
-  </ul>
-                
-
-                  </li>
-                </ul>
-          </div>
-     </div>
-
-</div>
+    </div>
 
      
 
@@ -151,7 +125,13 @@
 </template>
 
 <script>
+// import buycar from './buycar'
+import buycar from '../one/buycar'
+
 export default {
+    components:{
+        buycar,
+ },
     name:"neirongo",
     data: () => ({
     data: [],
@@ -316,6 +296,7 @@ export default {
       position: fixed;
       top: 1.63rem;
       left: 0;
+      padding-bottom:1rem;
     }
     .ww{
       border: 1px solid lightgray;
@@ -324,6 +305,7 @@ export default {
     }
     .w3{
       width:75%;
+      padding-bottom:1rem;
       margin-left: 27%;
       /* 超出滚动,x轴隐藏滚动条,y轴显示 */
       /* overflow-x: hidden;
