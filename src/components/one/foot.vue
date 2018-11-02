@@ -9,7 +9,7 @@
           </div>
           </router-link>
           <router-link to="/sousuo">
-          <div class="s1" @click="change2">
+          <div class="s1" @click="change2()">
            <img src="../img/02.png" v-if="down2">
            <img src="../img/21.png" v-else>
           <p><a href="##">搜索</a></p>
@@ -39,48 +39,40 @@
  
 
 export default {
-  data: () => ({
-    down1: true,
-    down2: true,
-    down3: true,
-    down4: true
-  }),
+  created(){
+      this.down1 = this.$store.state.down11;
+      this.down2 = this.$store.state.down22;
+      this.down3 = this.$store.state.down33;
+      this.down4 = this.$store.state.down44;
+  },
   methods: {
     change1() {
-      this.down1 = this.$store.state.down;
-      this.down2 = true;
-      this.down3 = true;
-      this.down4 = true;
-      if (this.down1 === true) {
-        this.down1 = !this.down1;
-      }
+      this.down1 = false;
+      this.$store.commit("zhengfan1", this.down1);
+      this.$store.commit("zhengfan2", true);
+      this.$store.commit("zhengfan3", true);
+      this.$store.commit("zhengfan4", true);
     },
     change2() {
-      this.down2 = this.$store.state.down;
-      this.down1 = true;
-      this.down3 = true;
-      this.down4 = true;
-      if (this.down2 === true) {
-        this.down2 = !this.down2;
-      }
+      this.down2 = false;
+      this.$store.commit("zhengfan2", this.down2);
+      this.$store.commit("zhengfan1", true);
+      this.$store.commit("zhengfan3", true);
+      this.$store.commit("zhengfan4", true);
     },
     change3() {
-      this.down3 = this.$store.state.down;
-      this.down1 = true;
-      this.down2 = true;
-      this.down4 = true;
-      if (this.down3 === true) {
-        this.down3 = !this.down3;
-      }
+      this.down3 = false;
+      this.$store.commit("zhengfan3", this.down3);
+      this.$store.commit("zhengfan1", true);
+      this.$store.commit("zhengfan2", true);
+      this.$store.commit("zhengfan4", true);
     },
     change4() {
-      this.down4 = this.$store.state.down;
-      this.down1 = true;
-      this.down2 = true;
-      this.down3 = true;
-      if (this.down4 === true) {
-        this.down4 = !this.down4;
-      }
+      this.down4 = false;
+      this.$store.commit("zhengfan4", this.down4);
+      this.$store.commit("zhengfan1", true);
+      this.$store.commit("zhengfan3", true);
+      this.$store.commit("zhengfan2", true);
     }
   }
 };

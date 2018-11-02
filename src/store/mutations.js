@@ -16,6 +16,18 @@ export default{
     sousuols(store, arr){
       this.state.ssls = arr;
     },
+    zhengfan1(store, down1){
+      this.state.down11 = down1;
+    },
+    zhengfan2(store, down2){
+      this.state.down22 = down2;
+    },
+    zhengfan3(store, down3){
+      this.state.down33 = down3;
+    },
+    zhengfan4(store, down4){
+      this.state.down44 = down4;
+    },
     ss(state,n){
       this.state.arr=n;
     },

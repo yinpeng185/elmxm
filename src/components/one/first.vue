@@ -210,16 +210,16 @@ export default {
     }
           
     // console.log(this.csxx);
-      let loadingInstance = Loading.service({
-        fullscreen:true
-      });
+      // let loadingInstance = Loading.service({
+      //   fullscreen:true
+      // });
    
     let api =
       "https://elm.cangdu.org/shopping/restaurants?latitude=31.22967&longitude=121.4762";
     //promise写法
     this.$http.get(api).then(data => {
         //在成功的时候,关闭加载提示
-        loadingInstance.close();
+        // loadingInstance.close();
 
       this.data = data.data;
     });
