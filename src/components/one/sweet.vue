@@ -3,7 +3,9 @@
 
     <div id="big">
      <div id="s1">
-         <router-link class="luy" :to="{name:'first'}"><i  style="color:white;font-size:0.15rem;" class="el-icon-arrow-left"></i></router-link>
+         <router-link class="luy" :to="{name:'first'}">
+             <i class="el-icon-arrow-left"></i>
+         </router-link>
        <p>{{id}}</p>
     </div>
 
