@@ -11,8 +11,9 @@ export default  {
     dataa: [],
   }),
 
-
   arr:null,
   ss:[],
-  price:0
+  price:0,
+  oo:false,
+  
   }

@@ -1,43 +1,39 @@
 <template>
   <div id="foot">
-      <div id="first">
+       <div id="first">
           <router-link to="/first">
-          <div class="s1" @click="change1">
-          <img src="../img/01.png" v-if="down1">
-          <img src="../img/20.png" v-else>
-          <p><a href="##">外卖</a></p>
-          </div>
+           <div class="s1" @click="change1">
+             <img src="../img/01.png" v-if="down1">
+             <img src="../img/20.png" v-else>
+             <p><a href="##">外卖</a></p>
+           </div>
           </router-link>
           <router-link to="/sousuo">
-          <div class="s1" @click="change2">
-           <img src="../img/02.png" v-if="down2">
-           <img src="../img/21.png" v-else>
-          <p><a href="##">搜索</a></p>
-          </div>
+           <div class="s1" @click="change2">
+            <img src="../img/02.png" v-if="down2">
+            <img src="../img/21.png" v-else>
+            <p><a href="##">搜索</a></p>
+           </div>
           </router-link>
           <router-link to="/dingdan">
-          <div class="s1" @click="change3">
-           <img src="../img/03.png" v-if="down3">
-           <img src="../img/22.png" v-else>
-          <p><a href="##">订单</a></p>
-          </div>
+           <div class="s1" @click="change3">
+            <img src="../img/03.png" v-if="down3">
+            <img src="../img/22.png" v-else>
+            <p><a href="##">订单</a></p>
+           </div>
           </router-link>
           <router-link to="/my">
-          <div class="s1" @click="change4">
-              <img src="../img/04.png" v-if="down4">
-           <img src="../img/23.png" v-else>
-          <p><a href="##">我的</a></p>
-          </div>
+           <div class="s1" @click="change4">
+             <img src="../img/04.png" v-if="down4">
+             <img src="../img/23.png" v-else>
+             <p><a href="##">我的</a></p>
+           </div>
           </router-link>
-     
-</div>
-      
+       </div>
   </div>
 </template>
 
 <script>
- 
-
 export default {
   data: () => ({
     down1: true,

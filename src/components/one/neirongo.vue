@@ -234,13 +234,14 @@ export default {
     add(a) {
       this.$store.commit("add", a);
       console.log(this.$store.state.price);
-      console.log(this.$store.state.ss);
-
-
+      console.log(this.$store.state.oo);
+     
     },
     app(id) {
       this.$store.commit("app", id);
-      console.log(this.$store.state.ss);      
+      console.log(this.$store.state.price);
+      console.log(this.$store.state.oo);
+          
     },
     // add(ev) {
     //   // this.$store.commit("add", id);
@@ -374,7 +375,7 @@ export default {
 .w3 {
   width: 75%;
   margin-left: 27%;
-  padding-bottom: 1rem;
+  padding-bottom: 2.2rem;
   /* 超出滚动,x轴隐藏滚动条,y轴显示 */
   /* overflow-x: hidden;
       overflow-y: scroll;  */
