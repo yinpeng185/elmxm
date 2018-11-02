@@ -6,7 +6,7 @@
     </div>
     <div class="wrap">
       <div class="img">
-        <img class="img1" src="../../../images/activity.png" alt="">
+        <img class="img1" src="@/images/activity.png" alt="">
       </div>
       <div class="center">
         <div>

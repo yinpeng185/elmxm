@@ -49,8 +49,8 @@ export default new Router({
   routes: [
     {
       path: '/',  //默认路径
-      name:"first",
-      component: First,
+      name:"dingwei",
+      component: Dingwei,
     },
     {
       path: '/foot',    //底部共用组件

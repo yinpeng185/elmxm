@@ -145,7 +145,7 @@ p{
 .hot ul li{
     float: left;
     list-style-type: none;
-    width: 24.9%;
+    width: 24.3%;
     text-align: center;
     color: blue;
     height: 0.35rem;
@@ -165,7 +165,7 @@ p{
 .list ul li{
     float: left;
     list-style-type: none;
-    width: 24.9%;
+    width: 24.3%;
     text-align: center;
     height: 0.35rem;
     font-size: 0.12rem;
