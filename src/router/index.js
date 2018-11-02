@@ -54,6 +54,7 @@ export default new Router({
     },
     {
       path: '/foot',    //底部共用组件
+
       component: Foot,
     },
     {
@@ -62,7 +63,7 @@ export default new Router({
     },
     {
       path: '/first',      //外卖界面
-      // name:'first',
+      name:'first',
       component: First,
     },{ 
       path: '/sweet',      //分类 排序 筛选 

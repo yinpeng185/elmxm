@@ -219,6 +219,7 @@ export default {
   width: 82%;
   margin-right: 1rem;
   padding: 0.3rem;
+  
 }
 .zys1{
   border-top: 3px dashed red;
@@ -226,7 +227,8 @@ export default {
   width: 90%;
   padding: 0.2rem 0 0.2rem 0;
   margin-top: 0.2rem;  
-  font-size: 0.1rem;
+  font-size: 0.1rem;  border-radius: 10px;
+
 }
 .zys11{
   border-right: 1px dashed gray;

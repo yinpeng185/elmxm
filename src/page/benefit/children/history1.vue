@@ -87,7 +87,9 @@ export default {
   width: 90%;
   padding: 0.2rem 0 0.2rem 0;
   margin-top: 0.2rem;  
-  font-size: 0.1rem;}
+  font-size: 0.1rem;
+  border-radius: 10px;
+  }
 .zys11{
   border-right: 1px dashed gray;
   padding-right: 0.2rem;
