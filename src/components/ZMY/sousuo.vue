@@ -1,7 +1,9 @@
 <template>
     <div>
-       <header>
-           <router-link class="luy" :to="{name:'first'}">V</router-link>
+       <header>        
+           <router-link class="luy" :to="{name:'first'}">
+               <i class="el-icon-arrow-left"></i>
+           </router-link>
            <span>搜索</span>
        </header>
        <div class="div1">
@@ -89,7 +91,6 @@ export default {
         margin: 4% 0 0;
         color: white;
         text-decoration: none;
-        transform: rotateZ(90deg);
         font-size: 0.16rem;
     }
     span{

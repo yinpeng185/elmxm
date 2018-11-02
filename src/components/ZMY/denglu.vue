@@ -1,7 +1,9 @@
 <template>
     <div class="all">
         <header>
-           <router-link class="luy" :to="{path:'/first'}">V</router-link>
+           <router-link class="luy" :to="{path:'/first'}">
+               <i class="el-icon-arrow-left"></i>
+           </router-link>
            <span>密码登录</span>
        </header>
        <input class="ip1" v-model="username" type="text" placeholder="账号">
@@ -109,7 +111,6 @@ header {
   margin: 4% 0 0;
   color: white;
   text-decoration: none;
-  transform: rotateZ(90deg);
 }
 span {
   display: inline-block;

@@ -1,7 +1,9 @@
 <template>
     <div class="all">
         <header>
-           <p @click="houtui()" class="luy">V</p>
+           <p @click="houtui()" class="luy">
+               <i class="el-icon-arrow-left"></i>
+           </p>
            <span>{{city.name}}</span>
            <router-link to="/dingwei">
             <span class="i2">切换城市</span>
@@ -128,7 +130,6 @@ export default {
         margin: 4% 0 0;
         color: white;
         text-decoration: none;
-        transform: rotateZ(90deg);
     }
     span{
         display: inline-block;
