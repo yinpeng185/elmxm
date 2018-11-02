@@ -27,6 +27,11 @@ export default{
     }
     this.state.price += a.price
 
+    // if(this.state.price < 40){
+    //   this.state.oo = false;
+    // }else{
+    //   this.state.oo = true;
+    // }
 
 
     },
@@ -50,5 +55,11 @@ export default{
 
 },
 
-    
+    qw(){
+        if(this.state.price >= 40){
+         this.state.oo = true;
+      }else{
+        this.state.oo = false;
+      }
+    }
   }
