@@ -63,7 +63,7 @@
                
                <p class="c6">配送方式</p>
                <div class="c8">
-               <li class="c7" v-for="vv in datass" :key="vv.id">
+               <li class="c7" v-for="vv in datass" :key="vv.id" @click="fun($event)">
                    
                   <img class="img" src="https://fuss10.elemecdn.com/b/ff/533cf9617bd57fe1dfb05603bebcfpng.png"
               alt="">   
@@ -74,7 +74,7 @@
           <ul>   
               <p class="c6">商家属性（可以多选）</p>
               <div class="dd">
-                  <li class="d7" v-for="vvvv in datasss" :key="vvvv.id">          
+                  <li @click="fun($event)" class="d7" v-for="(vvvv,index) in datasss" :key="index" >    
                   <img class="img" src="https://fuss10.elemecdn.com/b/ff/533cf9617bd57fe1dfb05603bebcfpng.png"
               alt="">   
                    {{vvvv}}</li>
@@ -83,8 +83,8 @@
        </div>
 
        <div class="ee">
-               <button class="e1">清空</button>
-               <button class="e2">确定</button>
+               <button class="e1" @click="chance1()">清空</button>
+               <button class="e2" @click="chance2()">确定</button>
        </div>
 
        </div> 
@@ -118,7 +118,8 @@ export default {
     latitude: "",
     longitude: "",
     index: "",
-    vlid: ""
+    vlid: "",
+    changeBlue:""
     }),
 
      created() {
@@ -183,6 +184,11 @@ if(this.indexx == undefined){
         this.data=this.arr[index].sub_categories;
         // console.log(index);
   },
+   fun(e){if(e.target.style.backgroundColor ==  'white'){
+               e.target.style.backgroundColor =  'skyblue';
+            }else{
+                e.target.style.backgroundColor =  'white';
+            }},
   change(){
       
       this.show = !this.show;
@@ -217,6 +223,22 @@ if(this.indexx == undefined){
       this.show1 = !this.show1;
       this.indexx = index+1;
       let api = "https://elm.cangdu.org/shopping/restaurants?latitude="+this.latitude+"&longitude="+this.longitude+"&limit=20&order_by="+this.indexx+"&restaurant_category_ids[]="+this.vlid;
+      this.$http.get(api).then(data => {
+          this.dataa = data.data;
+        //   console.log(this.dataa);
+      })
+  },
+//   shaixuan(math){
+//      console.log(math+1);
+    
+//   },
+  chance1(){
+         e.target.style.backgroundColor =  'white';
+  },
+  chance2(){
+     this.show2 = !this.show2;
+      this.indexx = 2;
+       let api = "https://elm.cangdu.org/shopping/restaurants?latitude="+this.latitude+"&longitude="+this.longitude+"&limit=20&order_by="+this.indexx+"&restaurant_category_ids[]="+this.vlid;
       this.$http.get(api).then(data => {
           this.dataa = data.data;
         //   console.log(this.dataa);
@@ -278,7 +300,9 @@ if(this.indexx == undefined){
 #b1,#c1{
     width: 100%;
 }
-
+.blue{
+    background:blue;
+}
 .v1{
     border: 1px solid lightgray;
     padding: 0.1rem;
