@@ -62,7 +62,7 @@ export default new Router({
     },
     {
       path: '/first',      //外卖界面
-      // name:'first',
+      name:'first',
       component: First,
     },{ 
       path: '/sweet',      //分类 排序 筛选 
