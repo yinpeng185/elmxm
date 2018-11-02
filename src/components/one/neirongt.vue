@@ -66,11 +66,11 @@
                             <span style="color:gray;font-size:0.12rem;">起</span>                   
                          </p>
                        </div>
-                       <div style="padding-top:0.8rem" >
+                       <div style="padding-top:0.8rem ;  width:0.7rem;" >
 
-                         <i @click="app(da.specfoods[0].food_id)" class="el-icon-remove"></i>
-                            {{da.specfoods[0].count}}
-                         <i @click="add(k.id,da.specfoods[0].food_id,da.specfoods[0])" class="el-icon-circle-plus"></i>
+                         <i v-if="da.specfoods[0].count>0" @click="app(da.specfoods[0])" class="el-icon-remove"></i>
+                            <span v-if="da.specfoods[0].count>0">{{da.specfoods[0].count}}</span>
+                         <i  @click="add(da.specfoods[0])" class="el-icon-circle-plus"></i>
                        </div>
                        <!-- <div style="padding-top:0.8rem">
                          <i @click="app($event)" class="el-icon-remove"></i>
@@ -231,8 +231,8 @@ export default {
     });
   },
   methods: {
-    add(aid, bid, cid) {
-      this.$store.commit("add", { a: aid, b: bid, c: cid });
+    add(a) {
+      this.$store.commit("add", a);
       console.log(this.$store.state.price);
       console.log(this.$store.state.ss);
 
@@ -240,6 +240,7 @@ export default {
     },
     app(id) {
       this.$store.commit("app", id);
+      console.log(this.$store.state.ss);      
     },
     // add(ev) {
     //   // this.$store.commit("add", id);
@@ -483,5 +484,9 @@ export default {
 .red {
   color: red;
   border-left: 5px solid blue;
+}
+
+.el-icon-circle-plus{
+  float: right;
 }
 </style>
