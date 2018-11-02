@@ -3,7 +3,7 @@
 
     <div id="big">
      <div id="s1">
-         <router-link class="luy" :to="{name:'first'}">V</router-link>
+         <router-link class="luy" :to="{name:'first'}"><i  style="color:white;font-size:0.15rem;" class="el-icon-arrow-left"></i></router-link>
        <p>{{id}}</p>
     </div>
 
@@ -324,8 +324,6 @@ if(this.indexx == undefined){
   float: left;
   margin-left: 0.1rem;
   color: white;
-  text-decoration: none;
-  transform: rotateZ(90deg);
 }
 
 #s2,#s3,#s4{
