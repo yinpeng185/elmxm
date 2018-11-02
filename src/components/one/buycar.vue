@@ -3,22 +3,23 @@
        <div v-if="buy" class="top">
            <div class="top1">
                <span>购物车</span>
-               <span @click="xxx" class="span1"><img src="../../images/bindphone.png" alt="">清空</span></div>
+               <span @click="qk" class="span1"><img src="../../images/bindphone.png" alt="">清空</span></div>
            <div class="list">
                <ul v-for="(item,index) in ss" :key="index">
                    <li>
                        <span>{{item.name}}</span> 
                        <span class="listr">
                        <span class="money">${{item.price}}</span>
-                       <i class="el-icon-remove-outline"></i> 
-                       1
-                       <i class="el-icon-circle-plus"></i>
+                       <i class="el-icon-remove-outline" @click="app(item)"></i> 
+                       {{item.count}}
+                       <i class="el-icon-circle-plus"  @click="add(item)"></i>
                        </span>
                    </li>
                </ul>
            </div>
        </div>
-       <div class="bottom" @click="xx">
+       <div class="bottom" >
+           <div class="bottoml" @click="xx">
            <div class="buy">
                <img src="../img/buy.png" alt="">
            </div>
@@ -26,9 +27,11 @@
                <p class="pay1">${{$store.state.price}}.00</p>
                <p class="pay2">配送费￥5</p>
            </div>
+           </div>
            <div>
                <router-link to="">
-               <button class="button">去结算</button>
+               <button v-if="oo" class="button">去结算</button>
+               <button v-else class="btn">去结算</button>
                </router-link>
            </div>
        </div>
@@ -39,16 +42,24 @@
 export default {
    data(){
     return{
-   
+      oo:false,
       buy:false,
     }
   },
   methods:{
+    add(a) {
+      this.$store.commit("add", a);
+    },
+    app(id) {
+      this.$store.commit("app", id);
+      console.log(this.$store.state.ss);      
+    },
     xx(){
      this.buy = !this.buy;
     }, 
-    xxx(){
+    qk(){
     this.buy =false
+    this.$store.commit("qk");
     }, 
   },
   computed:{
@@ -93,7 +104,15 @@ export default {
 }
 .bottom{
     width: 100%;
+    /* background: red; */
+}
+.bottoml{
+    /* border: 1px solid red; */
     background: black;
+    display: flex;
+    /* justify-content: space-between; */
+    width: 100%;
+    
 }
 .button{
     background: springgreen;
@@ -103,8 +122,17 @@ export default {
     font-size: 0.25rem;
     font-weight: bold;
 }
+.btn{
+    background: gray;
+    width: 1rem;
+    height: 100%;
+    color: white;
+    font-size: 0.25rem;
+    font-weight: bold;
+}
 .buy{
-    padding: 0 0rem 0 0.1rem ;
+    /* border: 1px solid red; */
+    padding: 0 0.5rem 0 0.1rem ;
 }
 .buy img{
     border-radius: 50%;
