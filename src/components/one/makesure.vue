@@ -1,18 +1,18 @@
 <template>
     <div>
         <div class="a1">
-             <router-link to="">
+             <router-link :to="{path:'/neirongo/'+this.id}">
                  <i  style="color:white;font-size:0.15rem;" class="el-icon-arrow-left"></i>
              </router-link>
              <p style="color:white;font-size:0.15rem;">确认订单</p>
-             <router-link to="">
+             <router-link to="/My">
                  <img class="a2" src="../img/04.png">
              </router-link>
         </div>
 
         <div class="a3">
-            <p style="font-size:0.12rem">请添加一个收货地址</p>
             <router-link to="">
+                  <p style="font-size:0.12rem">请添加一个收货地址</p>   
                  <i style="font-size:0.15rem;" class="el-icon-arrow-right"></i>
              </router-link>
         </div>
@@ -54,7 +54,12 @@
 <script>
 export default {
     name:"makesure",
-    
+    data: () => ({
+    id:"",  
+  }),
+  created(){
+       this.id = this.$route.params.id;
+  }
 }
 </script>
 

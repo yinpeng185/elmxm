@@ -85,7 +85,7 @@ export default new Router({
       name:"xiangqing",
       component: Xiangqing,
     },{
-      path: '/makesure',       //商家详情
+      path: '/makesure/:id',       //商家详情
       name:"makesure",
       component: Makesure,
     },{

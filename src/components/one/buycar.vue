@@ -29,7 +29,7 @@
            </div>
            </div>
            <div>
-               <router-link to="">
+               <router-link :to='"/makesure/"+this.id'>
                <button v-if="qw" class="button">去结算</button>
                <button v-else class="btn">去结算</button>
                </router-link>
@@ -40,6 +40,11 @@
 
 <script>
 export default {
+    props:{
+        id:{
+            type:String,
+        }
+    },
    data(){
     return{
       oo:null,
