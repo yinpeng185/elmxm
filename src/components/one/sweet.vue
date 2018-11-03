@@ -29,7 +29,7 @@
 <div id="aa" v-if="show">
  <div id="a1">
      <ul>
-         <li class="v1" v-for="(k,index) in arr" :key="index" @click="add(index)"> 
+         <li class="v1" v-for="(k,index) in arr" :key="index" @click="add(index)" :class="{gray:changeGray == index}"> 
               <img class="img" src="https://fuss10.elemecdn.com/b/ff/533cf9617bd57fe1dfb05603bebcfpng.png"
               alt="">         
              {{k.name}}--{{k.count}}
@@ -39,7 +39,7 @@
  </div>
 <div id="a2">
      <ul>
-          <li @click="fenlei(value)" class="v1" v-for="value in data" :key="value.id">{{value.name}}--{{value.count}}</li>
+          <li @click="fenlei(value)" class="v1" v-for="(value,index) in data" :key="index" :class="{pink:changePink == value}">{{value.name}}--{{value.count}}</li>
 
      </ul>
  </div>
@@ -48,7 +48,7 @@
    <div id="bb" v-if="show1">
        <div id="b1">
            <ul>
-               <li @click="paixu(index)" class="b6" v-for="(vvv, index) in datas" :key="index">
+               <li @click="paixu(index)" class="b6" v-for="(vvv, index) in datas" :key="index" :class="{blue:changeBlue == index}">
                     <img class="img" src="https://fuss10.elemecdn.com/b/ff/533cf9617bd57fe1dfb05603bebcfpng.png"
               alt="">  
                    {{vvv}}</li>
@@ -83,7 +83,7 @@
        </div>
 
        <div class="ee">
-               <button class="e1" @click="chance1()">清空</button>
+               <button class="e1" @click="chance1($event)">清空</button>
                <button class="e2" @click="chance2()">确定</button>
        </div>
 
@@ -119,7 +119,9 @@ export default {
     longitude: "",
     index: "",
     vlid: "",
-    changeBlue:""
+    changeBlue:"",
+    changeGray:"",
+    changePink:""
     }),
 
      created() {
@@ -181,14 +183,17 @@ if(this.indexx == undefined){
     },
     methods:{
         add(index){
+        this.changeGray = index;
         this.data=this.arr[index].sub_categories;
         // console.log(index);
   },
-   fun(e){if(e.target.style.backgroundColor ==  'white'){
+   fun(e){
+       if(e.target.style.backgroundColor ==  'white'){
                e.target.style.backgroundColor =  'skyblue';
             }else{
                 e.target.style.backgroundColor =  'white';
-            }},
+            }
+            },
   change(){
       
       this.show = !this.show;
@@ -210,6 +215,8 @@ if(this.indexx == undefined){
   },
   fenlei(value){
        console.log(value.id);
+       this.changePink=value;
+      
     //    this.index = this.$store.state.index;
        this.vlid = value.id;
        this.show = !this.show;
@@ -220,6 +227,7 @@ if(this.indexx == undefined){
   },
   paixu(index){
       console.log(index+1);
+      this.changeBlue = index;
       this.show1 = !this.show1;
       this.indexx = index+1;
       let api = "https://elm.cangdu.org/shopping/restaurants?latitude="+this.latitude+"&longitude="+this.longitude+"&limit=20&order_by="+this.indexx+"&restaurant_category_ids[]="+this.vlid;
@@ -232,8 +240,9 @@ if(this.indexx == undefined){
 //      console.log(math+1);
     
 //   },
-  chance1(){
-         e.target.style.backgroundColor =  'white';
+  chance1(e){
+         fun($event)  
+         
   },
   chance2(){
      this.show2 = !this.show2;
@@ -250,6 +259,15 @@ if(this.indexx == undefined){
 </script>
 
 <style scoped>
+.gray{
+    background :gray;
+}
+.blue{
+    background :blue;
+}
+.pink{
+    background: pink;
+}
 .ee{
     /* border: 1px solid black; */
     margin-top: 0.1rem;

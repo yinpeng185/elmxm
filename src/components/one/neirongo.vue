@@ -84,7 +84,7 @@
                
                
              </div>
-                 <buycar></buycar>
+                 <buycar v-bind:id="this.id"></buycar>
 </div>
 
 <div class="e1" v-if="show2">
