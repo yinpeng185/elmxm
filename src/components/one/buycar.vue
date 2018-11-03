@@ -24,7 +24,7 @@
                <img src="../img/buy.png" alt="">
            </div>
            <div>
-               <p class="pay1">${{$store.state.price}}.00</p>
+               <p class="pay1">￥{{$store.state.price}}.00</p>
                <p class="pay2">配送费￥5</p>
            </div>
            </div>

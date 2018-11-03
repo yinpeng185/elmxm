@@ -57,11 +57,11 @@
     <i class="el-icon-arrow-right el-right"></i>
   </div>
   <div>
-     <router-link to="/my/vipcard"> 
+     <div @click="Vip">
     <img src="../../images/bindphone.png" alt="">
     <span class="ooooo">饿了么会员卡</span>
     <i class="el-icon-arrow-right el-ri"></i>
-         </router-link> 
+      </div>
   </div>
 </div>
 
@@ -114,6 +114,14 @@ export default {
           type: 'warning'
         });
       },
+      Vip(){
+        if(this.$store.state.username == undefined){
+            alert("请登录！")
+        }else{
+          this.$router.push({path:'/my/vipcard'});
+        }
+        
+      }
     }
 };
 </script>

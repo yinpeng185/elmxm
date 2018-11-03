@@ -54,6 +54,7 @@ export default new Router({
     },
     {
       path: '/foot',    //底部共用组件
+
       component: Foot,
     },
     {
