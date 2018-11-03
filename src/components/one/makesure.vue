@@ -95,7 +95,7 @@
         
         <div class="a9" style="border:1px solid lightgray;">
             <span style="font-size:0.15rem;color:white;float:left;margin-top:0.15rem;margin-left:0.05rem;">待支付￥26819</span>
-            <router-link to="">
+            <router-link :to="{path:'/daojishi/'+this.id}">
                 <button style="padding:0.1rem;font-size:0.15rem;color:white;background:green;float:right;">确认下单</button>
             </router-link>
         </div>

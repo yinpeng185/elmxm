@@ -16,6 +16,7 @@ import Eat from '@/components/one/eat'
 import Neirongo from '@/components/one/neirongo'
 import Neirongt from '@/components/one/neirongt'
 import Makesure from '@/components/one/makesure'
+import Daojishi from '@/components/one/daojishi'
 import MY from '../components/MY/MY'
 import Msite from '../page/msite/msite'
 import Download from '../page/download/download'
@@ -91,6 +92,10 @@ export default new Router({
       path: '/makesure/:id',       //商家详情
       name:"makesure",
       component: Makesure,
+    },{
+      path: '/daojishi/:id',       //倒计时
+      name:"daojishi",
+      component: Daojishi,
     },{
       path: '/my',      //我的界面
       name: 'my',     
