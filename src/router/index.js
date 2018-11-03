@@ -43,6 +43,7 @@ import HbDescription from '../page/benefit/children/hbDescription'
 import History1 from '../page/benefit/children/history1'
 import History2 from '../page/benefit/children/history2'
 import History3 from '../page/benefit/children/history3'
+import Goumaihuiuan from'../page/vipcard/children/goumaivip'
 
 Vue.use(Router)
 Vue.use(Vuex)
@@ -52,12 +53,10 @@ export default new Router({
   routes: [
     {
       path: '/',  //默认路径
-      name:"dingwei",
       component: Dingwei,
     },
     {
       path: '/foot',    //底部共用组件
-
       component: Foot,
     },
     {
@@ -89,7 +88,7 @@ export default new Router({
       name:"xiangqing",
       component: Xiangqing,
     },{
-      path: '/makesure',       //商家详情
+      path: '/makesure/:id',       //商家详情
       name:"makesure",
       component: Makesure,
     },{
@@ -150,6 +149,9 @@ export default new Router({
     },{
       path: '/my/vipcard', //会员页
       component: Vipcard,
+    },{
+      path: '/my/vipcard/goumaihuiuan', //购买会员页
+      component: Goumaihuiuan,
     },{
       path: '/sousuo',    //搜索页
       name: 'SouSuo',
