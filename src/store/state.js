@@ -14,6 +14,7 @@ export default  {
     down22: true,
     down33: true,
     down44: true,
+    tianjiadz: [[">","编辑地址"]],
 
   arr:null,
   ss:[],

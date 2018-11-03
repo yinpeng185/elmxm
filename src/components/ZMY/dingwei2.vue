@@ -62,6 +62,7 @@ export default {
         }
         
         this.cid = this.$route.params.id;
+        console.log(this.cid);
         let cityy = "https://elm.cangdu.org/v1/cities/"+this.cid;
         this.$http.get(cityy).then(data => { 
         this.city = data.data;
