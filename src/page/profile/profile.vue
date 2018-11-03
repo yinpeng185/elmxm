@@ -18,10 +18,12 @@
             <i class="el-icon-arrow-right"></i> 
             </router-link>          
         </div>
-        <div class="one3">
+        <router-link to="/shouhdz">
+        <div class="one3">           
             <span class="onep3">收货地址</span>   
-            <i class="el-icon-arrow-right"></i>                                            
+            <i class="el-icon-arrow-right"></i>                                                
         </div>
+        </router-link>
     </div>
     <p class="bd">账号绑定</p>
     <div class="two" @click="open12">

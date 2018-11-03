@@ -32,6 +32,9 @@ import DengLu from '@/components/ZMY/denglu'
 import Dingdan from '@/components/ZMY/dingdan'
 import Change from '@/components/ZMY/change'
 import Dingwei2 from '@/components/ZMY/dingwei2'
+import Shouhdz from '@/components/ZMY/shouhdz'
+import Zengdz from '@/components/ZMY/zengdz'
+import Xuandz from '@/components/ZMY/xuandz'
 import Vipcard from '../page/vipcard/vip'
 import Detail from '../page/points/children/detail'
 import balDetail from '../page/balance/children/detail'
@@ -171,6 +174,20 @@ export default new Router({
       path: '/dingwei2/:id',
       name: 'dingwei2',
       component: Dingwei2
+    },{
+      path: '/shouhdz',
+      name: 'shouhdz',
+      component: Shouhdz
+    },
+    {
+      path: '/zengdz',
+      name: 'zengdz',
+      component: Zengdz
+    },
+    {
+      path: '/xuandz',
+      name: 'xuandz',
+      component: Xuandz
     }
 
   ]  

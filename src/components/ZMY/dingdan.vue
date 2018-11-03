@@ -17,6 +17,13 @@ export default {
     name: "dingdan",
     components:{
         foot
+    },
+    created(){
+        let api = "https://elm.cangdu.org/bos/v2/users/9729132/orders?limit=10&offset=0";
+        this.$http.get(api).then(data => {
+            this.dat = data;
+            console.log(this.dat);
+        })
     }
 }
 </script>

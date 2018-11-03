@@ -73,5 +73,9 @@ export default{
       }else{
         this.state.oo = false;
       }
+    },
+
+    dizhiz(store, dz){
+        this.state.tianjiadz.unshift(dz);
     }
   }
