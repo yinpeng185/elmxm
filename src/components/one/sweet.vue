@@ -83,7 +83,7 @@
        </div>
 
        <div class="ee">
-               <button class="e1" @click="chance1()">清空</button>
+               <button class="e1" @click="chance1($event)">清空</button>
                <button class="e2" @click="chance2()">确定</button>
        </div>
 
@@ -240,8 +240,9 @@ if(this.indexx == undefined){
 //      console.log(math+1);
     
 //   },
-  chance1(){
-         e.target.style.backgroundColor =  'white';
+  chance1(e){
+         fun($event)  
+         
   },
   chance2(){
      this.show2 = !this.show2;
