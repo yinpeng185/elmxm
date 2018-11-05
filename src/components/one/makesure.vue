@@ -82,14 +82,14 @@
         <div class="a7" style="border:1px solid lightgray;padding:0.1rem;">
             <router-link to="">
                 <span style="color:gray;font-size:0.18rem;">订单备注</span>
-                <i style="color:gray;font-size:0.14rem;float:right;margin-top:0.05rem;margin-right:0.05rem;" class="el-icon-arrow-right"></i>
+              <span style="color:gray;font-size:0.14rem;float:right;margin-top:0.05rem;margin-right:0.05rem;">口味、偏好等<i style="color:gray;font-size:0.14rem;" class="el-icon-arrow-right"></i></span>
             </router-link>
         </div>
 
         <div class="a8" style="border:1px solid lightgray;padding:0.1rem;">
             <router-link to="">
                 <span style="color:gray;font-size:0.18rem;">发票抬头</span>
-                <i  style="color:gray;font-size:0.14rem;float:right;margin-top:0.05rem;margin-right:0.05rem;" class="el-icon-arrow-right"></i>
+                <span style="color:gray;font-size:0.14rem;float:right;margin-top:0.05rem;margin-right:0.05rem;">不需要开发票<i style="color:gray;font-size:0.14rem;" class="el-icon-arrow-right"></i></span>
             </router-link>
         </div>
         

@@ -114,11 +114,11 @@ header {
 }
 span {
   display: inline-block;
-  margin: 4% 0;
+  margin: 3% 0;
   color: white;
 }
 input {
-  width: 100%;
+  width: 90%;
   height: 0.5rem;
   /* 取消聚焦 */
   outline: none;
@@ -184,7 +184,7 @@ button {
   width: 0.4rem;
 }
 .yanma div span{
-  width: 0.45rem;
+  width: 0.5rem;
   font-size: 0.15rem;
   color: black;
   margin: 0;

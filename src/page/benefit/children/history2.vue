@@ -87,7 +87,7 @@ export default {
 .tu{
   margin: 0 0.1rem 0 0.1rem;
   width: 0.5rem;
-  background: red;
+  background: white;
 }
 .p1{
   font-size: 0.15rem;

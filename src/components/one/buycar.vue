@@ -30,8 +30,8 @@
            </div>
            <div>
                <router-link :to='"/makesure/"+this.id'>
-               <button v-if="qw" class="button">去结算</button>
-               <button v-else class="btn">去结算</button>
+               <button v-if="qw" class="button">结算</button>
+               <button v-else class="btn">40元起</button>
                </router-link>
            </div>
        </div>
