@@ -11,7 +11,7 @@
         </div>
 
         <div class="a3">
-            <router-link to="">
+            <router-link :to="{path:'/shouhdz2/'+this.id}">
                   <p>
                       <span style="font-size:0.18rem; padding-left:0.1rem;">请添加一个收货地址</span>
                       

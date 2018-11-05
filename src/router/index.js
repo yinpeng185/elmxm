@@ -34,6 +34,7 @@ import Dingdan from '@/components/ZMY/dingdan'
 import Change from '@/components/ZMY/change'
 import Dingwei2 from '@/components/ZMY/dingwei2'
 import Shouhdz from '@/components/ZMY/shouhdz'
+import Shouhdz2 from '@/components/ZMY/shouhdz2'
 import Zengdz from '@/components/ZMY/zengdz'
 import Xuandz from '@/components/ZMY/xuandz'
 import Vipcard from '../page/vipcard/vip'
@@ -92,6 +93,10 @@ export default new Router({
       path: '/makesure/:id',       //商家详情
       name:"makesure",
       component: Makesure,
+    },{
+      path: '/shouhdz2/:id',       //商家详情
+      name:"shouhdz2",
+      component: Shouhdz2,
     },{
       path: '/daojishi/:id',       //倒计时
       name:"daojishi",
